@@ -1,0 +1,10 @@
+name: api
+auth: bearer
+environments:
+  Production:
+    url: 
+    docs:
+  Sandbox:
+    url:
+    docs:
+default-environment: Production
