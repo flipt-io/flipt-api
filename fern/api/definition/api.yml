@@ -1,5 +1,5 @@
 name: api
-auth: bearer
+auth: basic
 environments:
   Production:
     url: https://flipt.io/api/v1
