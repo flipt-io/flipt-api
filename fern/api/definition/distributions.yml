@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+services:
+  http:
+    DistributionsService:
+      base-path: /flags/{flagKey}/rules/{ruleId}/distributions
+      auth: true 
+      path-parameters:
+        flagKey: string 
+        ruleId: string 
+      endpoints: 
+        create:
+          path: /
+          method: POST 
+          request: fliptDistributionCreate
+          response: fliptDistribution
+
+        delete: 
+          path: /{id}
+          method: DELETE
+          path-parameters:
+            id: string 
+          query-parameters:
+            variantId: string
+        
+        update: 
+          path: /{id} 
+          method: PUT 
+          path-parameters:
+            id: string
+          request: fliptDistributionUpdate
+          response: fliptDistribution
+
+types:
+  fliptDistribution:
+    properties:
+      id: string
+      ruleId: string
+      variantId: string 
+      rollout: double 
+      createdAt: datetime
+      updatedAt: datetime
+
+  fliptDistributionCreate: 
+    properties:
+      variantId: string 
+      rollout: double 
+
+  fliptDistributionUpdate:
+    properties:
+      variantId: string 
+      rollout: double 

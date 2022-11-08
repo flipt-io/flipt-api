@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  commons: commons.yml
+  variants: variants.yml
+
+services:
+  http:
+    FlagsService:
+      base-path: /flags 
+      auth: true 
+      endpoints: 
+        list:
+          path: /
+          method: GET  
+          query-parameters:
+            limit: optional<integer>
+            offset: optional<integer>
+            pageToken: optional<string>
+          response: fliptFlagList
+
+        create: 
+          path: /
+          method: POST 
+          request: fliptCreateFlagRequest
+          response: fliptFlag
+
+        get: 
+          path: /{key}
+          method: GET 
+          path-parameters:
+            key: string 
+          response: fliptFlag
+
+        delete: 
+          path: /{key}
+          method: DELETE 
+          path-parameters:
+            key: string
+
+        update: 
+          path: /{key}
+          method: PUT 
+          path-parameters:
+            key: string 
+          request: fliptFlagUpdate
+          response: fliptFlag
+
+types: 
+  fliptFlagList: 
+    extends: commons.Pageable
+    properties:
+      flags: list<fliptFlag>
+
+  fliptFlag: 
+    properties:
+      key: string 
+      name: string 
+      description: string 
+      enabled: boolean 
+      createdAt: datetime 
+      updatedAt: datetime 
+      variants: list<variants.fliptVariant>
+
+  fliptCreateFlagRequest: 
+    properties:
+      key: string 
+      name: string 
+      description: optional<string>
+      enabled: optional<boolean>
+  
+  fliptFlagUpdate:
+    properties:
+      name: string 
+      description: optional<string>
+      enabled: optional<boolean>

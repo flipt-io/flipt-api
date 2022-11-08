@@ -1,4 +1,15 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
 
 types:
-  id: string
+  Pageable:
+    properties:
+      nextPageToken: string 
+      totalCount: integer 
+
+  fliptComparisonType: 
+    docs: The default is UNKNOWN_COMPARISON_TYPE
+    enum:
+      - UNKNOWN_COMPARISON_TYPE
+      - STRING_COMPARISON_TYPE
+      - NUMBER_COMPARISON_TYPE
+      - BOOLEAN_COMPARISON_TYPE

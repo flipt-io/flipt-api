@@ -2,9 +2,5 @@ name: api
 auth: bearer
 environments:
   Production:
-    url: 
-    docs:
-  Sandbox:
-    url:
-    docs:
+    url: https://flipt.io/api/v1
 default-environment: Production

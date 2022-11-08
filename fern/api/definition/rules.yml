@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  distributions: distributions.yml
+
+services:
+  http:
+    RulesService:
+      base-path: /flags/{flagKey}/rules
+      auth: true
+      path-parameters:
+        flagKey: string
+      endpoints:
+        list:
+          path: /
+          method: GET
+          query-parameters:
+            limit: optional<integer>
+            offset: optional<integer>
+            pageToken: optional<string>
+          response: fliptRuleList
+
+        create:
+          path: /
+          method: POST
+          request: fliptRuleCreate
+          response: fliptRule
+
+        order:
+          path: /order
+          method: PUT
+          request: fliptRuleOrder
+
+        get:
+          path: /{id}
+          method: GET
+          path-parameters:
+            id: string
+          response: fliptRule
+
+        delete:
+          path: /{id}
+          method: DELETE
+          path-parameters:
+            id: string
+
+        update:
+          path: /{id}
+          method: PUT
+          path-parameters:
+            id: string
+          request: fliptRuleUpdate
+
+types:
+  fliptRuleList:
+    properties:
+      rules: list<fliptRule>
+      nextPageToken: string
+      totalCount: integer
+
+  fliptRule:
+    properties:
+      id: string
+      flagKey: string
+      segmentKey: string
+      distributions: list<distributions.fliptDistribution>
+      rank: integer
+      createdAt: datetime
+      updatedAt: datetime
+
+  fliptRuleCreate:
+    properties:
+      segmentKey: string
+      rank: integer
+
+  fliptRuleOrder:
+    properties:
+      ruleIds: list<string>
+
+  fliptRuleUpdate:
+    properties:
+      segmentKey: string

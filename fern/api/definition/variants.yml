@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+services:
+  http:
+    VariantsService:
+      base-path: /flags/{flagKey}/variants
+      auth: true 
+      path-parameters:
+        flagKey: string 
+      endpoints: 
+        create:
+          path: /
+          method: POST 
+          request: fliptVariantCreate
+          response: fliptVariant 
+
+        delete: 
+          path: /{id}
+          path-parameters:
+            id: string 
+          method: DELETE
+      
+        update: 
+          path: /{id}
+          path-parameters:
+            id: string 
+          method: PUT 
+          request: fliptVariantUpdate 
+          response: fliptVariant
+
+types: 
+  fliptVariant:
+    properties:
+      id: string 
+      flagKey: string 
+      key: string 
+      name: string 
+      description: string 
+      createdAt: datetime 
+      updatedAt: datetime 
+      attachment: string
+      
+  fliptVariantCreate:
+    properties:
+      key: string 
+      name: optional<string>
+      description: optional<string>
+      attachment: optional<string>
+
+  fliptVariantUpdate: 
+    properties:
+      key: string 
+      name: optional<string>
+      description: optional<string>
+      attachment: optional<string>

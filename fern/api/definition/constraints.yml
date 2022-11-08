@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  commons: commons.yml
+
+services:
+  http:
+    ConstraintsService:
+      base-path: /segments/{segmentKey}/constraints
+      auth: true 
+      path-parameters:
+        segmentKey: string 
+      endpoints:
+        create: 
+          path: /
+          method: POST 
+          request: fliptConstraintCreateRequest
+          response: fliptConstraint
+
+        delete: 
+          path: /{id}
+          path-parameters:
+            id: string
+
+        update: 
+          path: /{id} 
+          path-parameters:
+            id: string 
+          request: fliptConstraintUpdateRequest
+
+      
+types:
+  fliptConstraintCreateRequest: 
+    properties:
+      type: commons.fliptComparisonType
+      property: string 
+      operator: string 
+      value: optional<string>
+  
+  fliptConstraint: 
+    properties:
+      id: string  
+      segmentKey: string 
+      type: commons.fliptComparisonType 
+      property: string 
+      operator: string 
+      value: string
+      createdAt: datetime 
+      updatedAt: datetime
+
+  fliptConstraintUpdateRequest:
+    properties:
+      type: commons.fliptComparisonType
+      property: string 
+      operator: string 
+      value: optional<string>
