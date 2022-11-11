@@ -22,12 +22,5 @@ release:
     version: 0.0.10
     github:
       repository: fern-flipt/flipt-openapi
-      
-  - name: fernapi/fern-postman
-    version: 0.0.31
-    publishing:
-      postman:
-        api-key: ${FERN_POSTMAN_API_KEY}
-        workspace-id: ${FERN_POSTMAN_WORKSPACE_ID}
-    github:
-      repository: fern-flipt/flipt-postman
+
+  
