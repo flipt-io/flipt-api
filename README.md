@@ -2,7 +2,9 @@
 
 Tagging a release on this repository will update the:
 
-- [TypeScript SDK Github Repo](https://github.com/fern-flipt/flipt-node)
+- [TypeScript SDK repo](https://github.com/fern-flipt/flipt-node)
+- [Java SDK repo](https://github.com/fern-flipt/flipt-java)
+- [OpenAPI description repo](https://github.com/fern-flipt/flipt-openapi)
 - _More SDKs to come..._
 
 ## What is in this repository?
