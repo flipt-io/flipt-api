@@ -4,52 +4,52 @@ services:
   http:
     VariantsService:
       base-path: /flags/{flagKey}/variants
-      auth: true 
+      auth: true
       path-parameters:
-        flagKey: string 
-      endpoints: 
+        flagKey: string
+      endpoints:
         create:
           path: /
-          method: POST 
+          method: POST
           request: fliptVariantCreate
-          response: fliptVariant 
-
-        delete: 
-          path: /{id}
-          path-parameters:
-            id: string 
-          method: DELETE
-      
-        update: 
-          path: /{id}
-          path-parameters:
-            id: string 
-          method: PUT 
-          request: fliptVariantUpdate 
           response: fliptVariant
 
-types: 
+        delete:
+          path: /{id}
+          path-parameters:
+            id: string
+          method: DELETE
+
+        update:
+          path: /{id}
+          path-parameters:
+            id: string
+          method: PUT
+          request: fliptVariantUpdate
+          response: fliptVariant
+
+types:
   fliptVariant:
     properties:
-      id: string 
-      flagKey: string 
-      key: string 
-      name: string 
-      description: string 
-      createdAt: datetime 
-      updatedAt: datetime 
+      id: string
+      flagKey: string
+      key: string
+      name: string
+      description: string
+      createdAt: datetime
+      updatedAt: datetime
       attachment: string
-      
+
   fliptVariantCreate:
     properties:
-      key: string 
+      key: string
       name: optional<string>
       description: optional<string>
       attachment: optional<string>
 
-  fliptVariantUpdate: 
+  fliptVariantUpdate:
     properties:
-      key: string 
+      key: string
       name: optional<string>
       description: optional<string>
       attachment: optional<string>

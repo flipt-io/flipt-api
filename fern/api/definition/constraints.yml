@@ -7,50 +7,57 @@ services:
   http:
     ConstraintsService:
       base-path: /segments/{segmentKey}/constraints
-      auth: true 
+      auth: true
       path-parameters:
-        segmentKey: string 
+        segmentKey: string
       endpoints:
-        create: 
+        create:
           path: /
-          method: POST 
+          method: POST
           request: fliptConstraintCreateRequest
           response: fliptConstraint
 
-        delete: 
+        delete:
           path: /{id}
           path-parameters:
             id: string
 
-        update: 
-          path: /{id} 
+        update:
+          path: /{id}
           path-parameters:
-            id: string 
+            id: string
           request: fliptConstraintUpdateRequest
 
-      
 types:
-  fliptConstraintCreateRequest: 
+  fliptComparisonType:
+    docs: The default is UNKNOWN_COMPARISON_TYPE
+    enum:
+      - UNKNOWN_COMPARISON_TYPE
+      - STRING_COMPARISON_TYPE
+      - NUMBER_COMPARISON_TYPE
+      - BOOLEAN_COMPARISON_TYPE
+
+  fliptConstraintCreateRequest:
     properties:
       type: commons.fliptComparisonType
-      property: string 
-      operator: string 
+      property: string
+      operator: string
       value: optional<string>
-  
-  fliptConstraint: 
+
+  fliptConstraint:
     properties:
-      id: string  
-      segmentKey: string 
-      type: commons.fliptComparisonType 
-      property: string 
-      operator: string 
+      id: string
+      segmentKey: string
+      type: commons.fliptComparisonType
+      property: string
+      operator: string
       value: string
-      createdAt: datetime 
+      createdAt: datetime
       updatedAt: datetime
 
   fliptConstraintUpdateRequest:
     properties:
       type: commons.fliptComparisonType
-      property: string 
-      operator: string 
+      property: string
+      operator: string
       value: optional<string>

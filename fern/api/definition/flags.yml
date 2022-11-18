@@ -7,70 +7,70 @@ imports:
 services:
   http:
     FlagsService:
-      base-path: /flags 
-      auth: true 
-      endpoints: 
+      base-path: /flags
+      auth: true
+      endpoints:
         list:
           path: /
-          method: GET  
+          method: GET
           query-parameters:
             limit: optional<integer>
             offset: optional<integer>
             pageToken: optional<string>
           response: fliptFlagList
 
-        create: 
+        create:
           path: /
-          method: POST 
+          method: POST
           request: fliptCreateFlagRequest
           response: fliptFlag
 
-        get: 
+        get:
           path: /{key}
-          method: GET 
+          method: GET
           path-parameters:
-            key: string 
+            key: string
           response: fliptFlag
 
-        delete: 
+        delete:
           path: /{key}
-          method: DELETE 
+          method: DELETE
           path-parameters:
             key: string
 
-        update: 
+        update:
           path: /{key}
-          method: PUT 
+          method: PUT
           path-parameters:
-            key: string 
+            key: string
           request: fliptFlagUpdate
           response: fliptFlag
 
-types: 
-  fliptFlagList: 
+types:
+  fliptFlagList:
     extends: commons.Pageable
     properties:
       flags: list<fliptFlag>
 
-  fliptFlag: 
+  fliptFlag:
     properties:
-      key: string 
-      name: string 
-      description: string 
-      enabled: boolean 
-      createdAt: datetime 
-      updatedAt: datetime 
+      key: string
+      name: string
+      description: string
+      enabled: boolean
+      createdAt: datetime
+      updatedAt: datetime
       variants: list<variants.fliptVariant>
 
-  fliptCreateFlagRequest: 
+  fliptCreateFlagRequest:
     properties:
-      key: string 
-      name: string 
+      key: string
+      name: string
       description: optional<string>
       enabled: optional<boolean>
-  
+
   fliptFlagUpdate:
     properties:
-      name: string 
+      name: string
       description: optional<string>
       enabled: optional<boolean>

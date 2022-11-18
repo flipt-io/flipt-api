@@ -3,13 +3,5 @@
 types:
   Pageable:
     properties:
-      nextPageToken: string 
-      totalCount: integer 
-
-  fliptComparisonType: 
-    docs: The default is UNKNOWN_COMPARISON_TYPE
-    enum:
-      - UNKNOWN_COMPARISON_TYPE
-      - STRING_COMPARISON_TYPE
-      - NUMBER_COMPARISON_TYPE
-      - BOOLEAN_COMPARISON_TYPE
+      nextPageToken: string
+      totalCount: integer
