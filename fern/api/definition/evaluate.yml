@@ -3,29 +3,29 @@
 services:
   http:
     EvaluateService:
-      base-path: /
+      base-path: /api/v1
       auth: true
       endpoints:
         evaluate:
           path: /evaluate
           method: POST
-          request: fliptEvaluationRequest
-          response: fliptEvaluationResponse
+          request: evaluationRequest
+          response: evaluationResponse
         batchEvaluate:
           path: /batch-evaluate
           method: POST
-          request: fliptBatchEvaluationRequest
-          response: fliptBatchEvaluationResponse
+          request: batchEvaluationRequest
+          response: batchEvaluationResponse
 
 types:
-  fliptEvaluationRequest:
+  evaluationRequest:
     properties:
       requestId: optional<string>
       flagKey: string
       entityId: string
       context: string
 
-  fliptEvaluationResponse:
+  evaluationResponse:
     properties:
       requestId: string
       entityId: string
@@ -37,9 +37,9 @@ types:
       value: string
       requestDurationMillis: double
       attachment: string
-      reasons: fliptEvaluationReason
+      reasons: evaluationReason
 
-  fliptEvaluationReason:
+  evaluationReason:
     enum:
       - UNKNOWN_EVALUATION_REASON
       - FLAG_DISABLED_EVALUATION_REASON
@@ -47,14 +47,14 @@ types:
       - MATCH_EVALUATION_REASON
       - ERROR_EVALUATION_REASON
 
-  fliptBatchEvaluationRequest:
+  batchEvaluationRequest:
     properties:
       requestId: optional<string>
-      requests: list<fliptEvaluationRequest>
+      requests: list<evaluationRequest>
       excludeNotFound: optional<boolean>
 
-  fliptBatchEvaluationResponse:
+  batchEvaluationResponse:
     properties:
       requestId: string
-      response: list<fliptEvaluationResponse>
+      response: list<evaluationResponse>
       requestDurationMillis: double

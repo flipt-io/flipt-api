@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  commons: commons.yml
+
+services:
+  http:
+    AuthenticationService:
+      base-path: /auth/v1
+      auth: true
+      endpoints:
+        listTokens:
+          path: /tokens
+          method: GET
+          response: authenticationList
+        getToken:
+          path: /tokens/{id}
+          method: GET
+          path-parameters:
+            id: string
+          response: authentication
+        createToken:
+          path: /method/token
+          method: POST
+          request: authenticationTokenCreateRequest
+          response: authenticationToken
+        deleteToken:
+          path: /tokens/{id}
+          method: DELETE
+          path-parameters:
+            id: string
+        getSelf:
+          path: /self
+          method: GET
+          response: authentication
+
+types:
+  authenticationMethod:
+    docs: The default is METHOD_NONE
+    enum:
+      - METHOD_NONE
+      - METHOD_TOKEN
+
+  authentication:
+    properties:
+      id: string
+      method: authenticationMethod
+      createdAt: datetime
+      updatedAt: datetime
+      expiresAt: optional<datetime>
+      metadata: map<string,string>
+
+  authenticationList:
+    extends: commons.Pageable
+    properties:
+      authentications: list<authentication>
+
+  authenticationTokenCreateRequest:
+    properties:
+      name: string
+      description: string
+      expiresAt: optional<datetime>
+
+  authenticationToken:
+    properties:
+      clientToken: string

@@ -3,7 +3,7 @@
 services:
   http:
     ConstraintsService:
-      base-path: /segments/{segmentKey}/constraints
+      base-path: /api/v1/segments/{segmentKey}/constraints
       auth: true
       path-parameters:
         segmentKey: string
@@ -11,8 +11,8 @@ services:
         create:
           path: /
           method: POST
-          request: fliptConstraintCreateRequest
-          response: fliptConstraint
+          request: constraintCreateRequest
+          response: constraint
 
         delete:
           path: /{id}
@@ -23,10 +23,10 @@ services:
           path: /{id}
           path-parameters:
             id: string
-          request: fliptConstraintUpdateRequest
+          request: constraintUpdateRequest
 
 types:
-  fliptComparisonType:
+  constraintComparisonType:
     docs: The default is UNKNOWN_COMPARISON_TYPE
     enum:
       - UNKNOWN_COMPARISON_TYPE
@@ -34,27 +34,27 @@ types:
       - NUMBER_COMPARISON_TYPE
       - BOOLEAN_COMPARISON_TYPE
 
-  fliptConstraintCreateRequest:
+  constraintCreateRequest:
     properties:
-      type: fliptComparisonType
+      type: constraintComparisonType
       property: string
       operator: string
       value: optional<string>
 
-  fliptConstraint:
+  constraint:
     properties:
       id: string
       segmentKey: string
-      type: fliptComparisonType
+      type: constraintComparisonType
       property: string
       operator: string
       value: string
       createdAt: datetime
       updatedAt: datetime
 
-  fliptConstraintUpdateRequest:
+  constraintUpdateRequest:
     properties:
-      type: fliptComparisonType
+      type: constraintComparisonType
       property: string
       operator: string
       value: optional<string>

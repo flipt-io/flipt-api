@@ -7,7 +7,7 @@ imports:
 services:
   http:
     FlagsService:
-      base-path: /flags
+      base-path: /api/v1/flags
       auth: true
       endpoints:
         list:
@@ -17,20 +17,20 @@ services:
             limit: optional<integer>
             offset: optional<integer>
             pageToken: optional<string>
-          response: fliptFlagList
+          response: flagList
 
         create:
           path: /
           method: POST
-          request: fliptCreateFlagRequest
-          response: fliptFlag
+          request: flagCreateRequest
+          response: flag
 
         get:
           path: /{key}
           method: GET
           path-parameters:
             key: string
-          response: fliptFlag
+          response: flag
 
         delete:
           path: /{key}
@@ -43,16 +43,16 @@ services:
           method: PUT
           path-parameters:
             key: string
-          request: fliptFlagUpdate
-          response: fliptFlag
+          request: flagUpdateRequest
+          response: flag
 
 types:
-  fliptFlagList:
+  flagList:
     extends: commons.Pageable
     properties:
-      flags: list<fliptFlag>
+      flags: list<flag>
 
-  fliptFlag:
+  flag:
     properties:
       key: string
       name: string
@@ -60,16 +60,16 @@ types:
       enabled: boolean
       createdAt: datetime
       updatedAt: datetime
-      variants: list<variants.fliptVariant>
+      variants: list<variants.variant>
 
-  fliptCreateFlagRequest:
+  flagCreateRequest:
     properties:
       key: string
       name: string
       description: optional<string>
       enabled: optional<boolean>
 
-  fliptFlagUpdate:
+  flagUpdateRequest:
     properties:
       name: string
       description: optional<string>

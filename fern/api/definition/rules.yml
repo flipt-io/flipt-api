@@ -6,7 +6,7 @@ imports:
 services:
   http:
     RulesService:
-      base-path: /flags/{flagKey}/rules
+      base-path: /api/v1/flags/{flagKey}/rules
       auth: true
       path-parameters:
         flagKey: string
@@ -18,25 +18,25 @@ services:
             limit: optional<integer>
             offset: optional<integer>
             pageToken: optional<string>
-          response: fliptRuleList
+          response: ruleList
 
         create:
           path: /
           method: POST
-          request: fliptRuleCreate
-          response: fliptRule
+          request: ruleCreateRequest
+          response: rule
 
         order:
           path: /order
           method: PUT
-          request: fliptRuleOrder
+          request: ruleOrder
 
         get:
           path: /{id}
           method: GET
           path-parameters:
             id: string
-          response: fliptRule
+          response: rule
 
         delete:
           path: /{id}
@@ -49,34 +49,34 @@ services:
           method: PUT
           path-parameters:
             id: string
-          request: fliptRuleUpdate
+          request: ruleUpdateRequest
 
 types:
-  fliptRuleList:
+  ruleList:
     properties:
-      rules: list<fliptRule>
+      rules: list<rule>
       nextPageToken: string
       totalCount: integer
 
-  fliptRule:
+  rule:
     properties:
       id: string
       flagKey: string
       segmentKey: string
-      distributions: list<distributions.fliptDistribution>
+      distributions: list<distributions.distribution>
       rank: integer
       createdAt: datetime
       updatedAt: datetime
 
-  fliptRuleCreate:
+  ruleCreateRequest:
     properties:
       segmentKey: string
       rank: integer
 
-  fliptRuleOrder:
+  ruleOrder:
     properties:
       ruleIds: list<string>
 
-  fliptRuleUpdate:
+  ruleUpdateRequest:
     properties:
       segmentKey: string

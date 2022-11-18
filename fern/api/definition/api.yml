@@ -2,5 +2,5 @@ name: api
 auth: basic
 environments:
   Production:
-    url: https://flipt.io/api/v1
+    url: http://localhost:8080
 default-environment: Production
