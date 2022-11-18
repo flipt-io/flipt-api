@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+services:
+  http:
+    AuthenticationService:
+      base-path: /auth/v1
+      auth: true
+      endpoints:
+        createToken:
+          path: /method/token
+          method: POST
+          request: authenticationTokenCreateRequest
+          response: authenticationToken
+
+types:
+  authenticationMethod:
+    enum:
+      - METHOD_NONE
+      - METHOD_TOKEN
+
+  authentication:
+    properties:
+      id: string
+      method: authenticationMethod
+      createdAt: datetime
+      updatedAt: datetime
+      expiresAt: optional<datetime>
+      metadata: map<string,string>
+
+  authenticationTokenCreateRequest:
+    properties:
+      name: string
+      description: string
+      expiresAt: optional<datetime>
+
+  authenticationToken:
+    properties:
+      clientToken: string

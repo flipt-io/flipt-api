@@ -3,7 +3,7 @@
 services:
   http:
     VariantsService:
-      base-path: /flags/{flagKey}/variants
+      base-path: /api/v1/flags/{flagKey}/variants
       auth: true
       path-parameters:
         flagKey: string
@@ -11,8 +11,8 @@ services:
         create:
           path: /
           method: POST
-          request: fliptVariantCreate
-          response: fliptVariant
+          request: variantCreateRequest
+          response: variant
 
         delete:
           path: /{id}
@@ -25,11 +25,11 @@ services:
           path-parameters:
             id: string
           method: PUT
-          request: fliptVariantUpdate
-          response: fliptVariant
+          request: variantUpdateRequest
+          response: variant
 
 types:
-  fliptVariant:
+  variant:
     properties:
       id: string
       flagKey: string
@@ -40,14 +40,14 @@ types:
       updatedAt: datetime
       attachment: string
 
-  fliptVariantCreate:
+  variantCreateRequest:
     properties:
       key: string
       name: optional<string>
       description: optional<string>
       attachment: optional<string>
 
-  fliptVariantUpdate:
+  variantUpdateRequest:
     properties:
       key: string
       name: optional<string>

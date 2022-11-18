@@ -3,50 +3,50 @@
 services:
   http:
     DistributionsService:
-      base-path: /flags/{flagKey}/rules/{ruleId}/distributions
-      auth: true 
+      base-path: /api/v1/flags/{flagKey}/rules/{ruleId}/distributions
+      auth: true
       path-parameters:
-        flagKey: string 
-        ruleId: string 
-      endpoints: 
+        flagKey: string
+        ruleId: string
+      endpoints:
         create:
           path: /
-          method: POST 
-          request: fliptDistributionCreate
-          response: fliptDistribution
+          method: POST
+          request: distributionCreateRequest
+          response: distribution
 
-        delete: 
+        delete:
           path: /{id}
           method: DELETE
           path-parameters:
-            id: string 
+            id: string
           query-parameters:
             variantId: string
-        
-        update: 
-          path: /{id} 
-          method: PUT 
+
+        update:
+          path: /{id}
+          method: PUT
           path-parameters:
             id: string
-          request: fliptDistributionUpdate
-          response: fliptDistribution
+          request: distributionUpdateRequest
+          response: distribution
 
 types:
-  fliptDistribution:
+  distribution:
     properties:
       id: string
       ruleId: string
-      variantId: string 
-      rollout: double 
+      variantId: string
+      rollout: double
       createdAt: datetime
       updatedAt: datetime
 
-  fliptDistributionCreate: 
+  distributionCreateRequest:
     properties:
-      variantId: string 
-      rollout: double 
+      variantId: string
+      rollout: double
 
-  fliptDistributionUpdate:
+  distributionUpdateRequest:
     properties:
-      variantId: string 
-      rollout: double 
+      variantId: string
+      rollout: double
