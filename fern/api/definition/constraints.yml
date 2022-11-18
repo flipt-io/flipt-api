@@ -1,8 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
 
-imports:
-  commons: commons.yml
-
 services:
   http:
     ConstraintsService:
@@ -39,7 +36,7 @@ types:
 
   fliptConstraintCreateRequest:
     properties:
-      type: commons.fliptComparisonType
+      type: fliptComparisonType
       property: string
       operator: string
       value: optional<string>
@@ -48,7 +45,7 @@ types:
     properties:
       id: string
       segmentKey: string
-      type: commons.fliptComparisonType
+      type: fliptComparisonType
       property: string
       operator: string
       value: string
@@ -57,7 +54,7 @@ types:
 
   fliptConstraintUpdateRequest:
     properties:
-      type: commons.fliptComparisonType
+      type: fliptComparisonType
       property: string
       operator: string
       value: optional<string>
