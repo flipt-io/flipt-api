@@ -36,6 +36,7 @@ services:
 
 types:
   authenticationMethod:
+    docs: The default is METHOD_NONE
     enum:
       - METHOD_NONE
       - METHOD_TOKEN
