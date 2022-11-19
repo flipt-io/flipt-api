@@ -32,7 +32,7 @@ Generators read in your API Definition and output files or code (i.e. the TypeSc
 To trigger the generators run:
 
 ```bash
-fern release <version>
+fern generate --group external --version <version>
 ```
 
 This command currently runs in a GitHub workflow (see [ci.yml](.github/workflows/ci.yml#L32))
