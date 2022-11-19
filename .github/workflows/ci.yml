@@ -33,7 +33,7 @@ jobs:
 
   fern-release:
     needs: fern-check
-    if: github.event_name == 'create' && contains(github.ref, 'refs/tags/')
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
