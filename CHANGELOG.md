@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.19](https://github.com/flipt-io/flipt-api/compare/0.0.18...0.0.19) (2022-11-20)
+
+
+### Miscellaneous Chores
+
+* release 0.0.18 ([41a3c7c](https://github.com/flipt-io/flipt-api/commit/41a3c7c13b4429e32eb85a3c5927cd774e17e2fe))
+* release 0.0.19 ([e32a535](https://github.com/flipt-io/flipt-api/commit/e32a53565ddb4a0b3adfc1b10650eefb6f357248))
+
 ## [0.0.18](https://github.com/flipt-io/flipt-api/compare/0.0.17...0.0.18) (2022-11-20)
 
 
