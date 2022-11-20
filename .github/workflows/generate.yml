@@ -1,12 +1,9 @@
 name: generate
 
-on:
-  release:
-    types: [released]
+on: [release]
 
 jobs:
-  printJob:
-    name: Print event
+  print-job:
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
