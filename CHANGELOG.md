@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.16](https://github.com/flipt-io/flipt-api/compare/0.0.15...0.0.16) (2022-11-20)
+
+
+### Miscellaneous Chores
+
+* release 0.0.16 ([121d74a](https://github.com/flipt-io/flipt-api/commit/121d74a0c6e38c824e0656947aad616f4407c727))
+
 ## [0.0.15](https://github.com/flipt-io/flipt-api/compare/0.0.13...0.0.15) (2022-11-20)
 
 
