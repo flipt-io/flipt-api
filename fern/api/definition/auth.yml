@@ -55,9 +55,9 @@ types:
       metadata: map<string,string>
 
   authenticationList:
-    extends: commons.Pageable
     properties:
       authentications: list<authentication>
+      nextPageToken: string # TODO: replace with Pageable once we add `totalCount`
 
   authenticationTokenCreateRequest:
     properties:
