@@ -7,75 +7,75 @@ imports:
 services:
   http:
     SegmentsService:
-      base-path: /api/v1/segments
+      base-path: /segments
       auth: true
       endpoints:
         list:
-          method: GET
           path: /
+          method: GET
           query-parameters:
             limit: integer
             offset: integer
             pageToken: string
-          response: segmentList
+          response: fliptSegmentList
 
         create:
-          method: POST
           path: /
-          request: segmentCreateRequest
-          response: segment
+          method: POST
+          request: fliptCreateSegmentRequest
+          response: fliptSegment
 
         get:
-          method: GET
           path: /{key}
+          method: GET
           path-parameters:
             key: string
-          response: segment
+          response: fliptSegment
 
         delete:
-          method: DELETE
           path: /{key}
+          method: DELETE
           path-parameters:
             key: string
 
         update:
-          method: PUT
           path: /{key}
+          method: PUT
           path-parameters:
             key: string
-          request: segmentUpdateRequest
-          response: segment
+          request: fliptUpdateSegmentRequest
+          response: fliptSegment
 
 types:
-  segmentList:
+  fliptSegmentList:
     extends: commons.Pageable
     properties:
-      segments: list<segment>
+      segments: list<fliptSegment>
 
-  segment:
+  fliptSegment:
     properties:
       key: string
       name: string
       description: string
       createdAt: datetime
       updatedAt: datetime
-      constraints: list<constraints.constraint>
-      matchType: segmentMatchType
+      constraints: list<constraints.fliptConstraint>
+      matchType: fliptMatchType
 
-  segmentMatchType:
+  fliptMatchType:
     enum:
       - ALL_MATCH_TYPE
       - ANY_MATCH_TYPE
 
-  segmentCreateRequest:
+  fliptCreateSegmentRequest:
     properties:
       key: string
       name: string
       description: string
-      matchType: segmentMatchType
+      matchType: fliptMatchType
 
-  segmentUpdateRequest:
+  fliptUpdateSegmentRequest:
     properties:
       name: string
       description: string
-      matchType: segmentMatchType
+      matchType: fliptMatchType

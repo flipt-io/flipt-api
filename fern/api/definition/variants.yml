@@ -16,15 +16,15 @@ services:
 
         delete:
           path: /{id}
+          method: DELETE
           path-parameters:
             id: string
-          method: DELETE
 
         update:
           path: /{id}
+          method: PUT
           path-parameters:
             id: string
-          method: PUT
           request: variantUpdateRequest
           response: variant
 

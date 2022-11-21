@@ -16,11 +16,13 @@ services:
 
         delete:
           path: /{id}
+          method: DELETE
           path-parameters:
             id: string
 
         update:
           path: /{id}
+          method: PUT
           path-parameters:
             id: string
           request: constraintUpdateRequest
