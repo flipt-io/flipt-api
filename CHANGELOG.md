@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.26](https://github.com/flipt-io/flipt-api/compare/0.0.25...0.0.26) (2022-11-21)
+
+
+### Bug Fixes
+
+* remove totalCount from auths list response ([#25](https://github.com/flipt-io/flipt-api/issues/25)) ([c9a98e4](https://github.com/flipt-io/flipt-api/commit/c9a98e474ddc5fa59671324376e9ecb357c429bd))
+
 ## [0.0.25](https://github.com/flipt-io/flipt-api/compare/0.0.24...0.0.25) (2022-11-21)
 
 
