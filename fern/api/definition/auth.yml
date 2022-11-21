@@ -5,7 +5,7 @@ imports:
 
 services:
   http:
-    AuthenticationService:
+    Authentication:
       base-path: /auth/v1
       auth: true
       endpoints:

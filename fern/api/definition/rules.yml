@@ -5,7 +5,7 @@ imports:
 
 services:
   http:
-    RulesService:
+    Rules:
       base-path: /api/v1/flags/{flagKey}/rules
       auth: true
       path-parameters:

@@ -6,7 +6,7 @@ imports:
 
 services:
   http:
-    SegmentsService:
+    Segments:
       base-path: /api/v1/segments
       auth: true
       endpoints:

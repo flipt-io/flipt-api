@@ -2,7 +2,7 @@
 
 services:
   http:
-    DistributionsService:
+    Distributions:
       base-path: /api/v1/flags/{flagKey}/rules/{ruleId}/distributions
       auth: true
       path-parameters:

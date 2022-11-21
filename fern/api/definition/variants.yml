@@ -2,7 +2,7 @@
 
 services:
   http:
-    VariantsService:
+    Variants:
       base-path: /api/v1/flags/{flagKey}/variants
       auth: true
       path-parameters:

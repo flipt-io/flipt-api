@@ -2,7 +2,7 @@
 
 services:
   http:
-    ConstraintsService:
+    Constraints:
       base-path: /api/v1/segments/{segmentKey}/constraints
       auth: true
       path-parameters:

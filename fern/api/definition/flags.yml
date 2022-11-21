@@ -6,7 +6,7 @@ imports:
 
 services:
   http:
-    FlagsService:
+    Flags:
       base-path: /api/v1/flags
       auth: true
       endpoints:
