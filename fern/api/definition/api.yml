@@ -1,5 +1,5 @@
 name: api
-auth: basic
+auth: bearer
 environments:
   Production:
     url: http://localhost:8080
