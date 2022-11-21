@@ -7,7 +7,7 @@ imports:
 services:
   http:
     SegmentsService:
-      base-path: /segments
+      base-path: /api/v1/segments
       auth: true
       endpoints:
         list:
@@ -17,20 +17,20 @@ services:
             limit: integer
             offset: integer
             pageToken: string
-          response: fliptSegmentList
+          response: segmentList
 
         create:
           path: /
           method: POST
-          request: fliptCreateSegmentRequest
-          response: fliptSegment
+          request: segmentCreateRequest
+          response: segment
 
         get:
           path: /{key}
           method: GET
           path-parameters:
             key: string
-          response: fliptSegment
+          response: segment
 
         delete:
           path: /{key}
@@ -43,39 +43,39 @@ services:
           method: PUT
           path-parameters:
             key: string
-          request: fliptUpdateSegmentRequest
-          response: fliptSegment
+          request: segmentUpdateRequest
+          response: segment
 
 types:
-  fliptSegmentList:
+  segmentList:
     extends: commons.Pageable
     properties:
-      segments: list<fliptSegment>
+      segments: list<segment>
 
-  fliptSegment:
+  segment:
     properties:
       key: string
       name: string
       description: string
       createdAt: datetime
       updatedAt: datetime
-      constraints: list<constraints.fliptConstraint>
-      matchType: fliptMatchType
+      constraints: list<constraints.constraint>
+      matchType: segmentMatchType
 
-  fliptMatchType:
+  segmentMatchType:
     enum:
       - ALL_MATCH_TYPE
       - ANY_MATCH_TYPE
 
-  fliptCreateSegmentRequest:
+  segmentCreateRequest:
     properties:
       key: string
       name: string
       description: string
-      matchType: fliptMatchType
+      matchType: segmentMatchType
 
-  fliptUpdateSegmentRequest:
+  segmentUpdateRequest:
     properties:
       name: string
       description: string
-      matchType: fliptMatchType
+      matchType: segmentMatchType

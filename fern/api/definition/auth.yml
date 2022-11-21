@@ -13,22 +13,26 @@ services:
           path: /tokens
           method: GET
           response: authenticationList
+
         getToken:
           path: /tokens/{id}
           method: GET
           path-parameters:
             id: string
           response: authentication
+
         createToken:
           path: /method/token
           method: POST
           request: authenticationTokenCreateRequest
           response: authenticationToken
+
         deleteToken:
           path: /tokens/{id}
           method: DELETE
           path-parameters:
             id: string
+
         getSelf:
           path: /self
           method: GET

@@ -11,6 +11,7 @@ services:
           method: POST
           request: evaluationRequest
           response: evaluationResponse
+
         batchEvaluate:
           path: /batch-evaluate
           method: POST
