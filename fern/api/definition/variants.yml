@@ -9,7 +9,7 @@ services:
         flagKey: string
       endpoints:
         create:
-          path: /
+          path: ""
           method: POST
           request: variantCreateRequest
           response: variant

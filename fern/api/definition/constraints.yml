@@ -9,7 +9,7 @@ services:
         segmentKey: string
       endpoints:
         create:
-          path: /
+          path: ""
           method: POST
           request: constraintCreateRequest
           response: constraint

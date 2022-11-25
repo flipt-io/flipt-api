@@ -10,7 +10,7 @@ services:
         ruleId: string
       endpoints:
         create:
-          path: /
+          path: ""
           method: POST
           request: distributionCreateRequest
           response: distribution

@@ -11,7 +11,7 @@ services:
       auth: true
       endpoints:
         list:
-          path: /
+          path: ""
           method: GET
           query-parameters:
             limit: optional<integer>
@@ -20,7 +20,7 @@ services:
           response: flagList
 
         create:
-          path: /
+          path: ""
           method: POST
           request: flagCreateRequest
           response: flag

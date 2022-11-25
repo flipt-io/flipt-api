@@ -12,7 +12,7 @@ services:
         flagKey: string
       endpoints:
         list:
-          path: /
+          path: ""
           method: GET
           query-parameters:
             limit: optional<integer>
@@ -21,7 +21,7 @@ services:
           response: ruleList
 
         create:
-          path: /
+          path: ""
           method: POST
           request: ruleCreateRequest
           response: rule

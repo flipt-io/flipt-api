@@ -11,7 +11,7 @@ services:
       auth: true
       endpoints:
         list:
-          path: /
+          path: ""
           method: GET
           query-parameters:
             limit: integer
@@ -20,7 +20,7 @@ services:
           response: segmentList
 
         create:
-          path: /
+          path: ""
           method: POST
           request: segmentCreateRequest
           response: segment
