@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/flipt-io/flipt-api/compare/0.1.0...0.1.1) (2022-11-25)
+
+
+### Bug Fixes
+
+* rm trailing slash for openapi defs ([b847ff8](https://github.com/flipt-io/flipt-api/commit/b847ff8554a9e26f62081a86f73b94f4e69990bc))
+
 ## [0.1.0](https://github.com/flipt-io/flipt-api/compare/0.0.26...0.1.0) (2022-11-21)
 
 
