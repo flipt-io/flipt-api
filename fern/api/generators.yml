@@ -11,11 +11,6 @@ groups:
           repository: flipt-io/flipt-node
       - name: fernapi/fern-java-sdk
         version: 0.0.125
-        output:
-          location: maven
-          coordinate: io.github.fern-api:flipt
-          username: ${FERN_MAVEN_USERNAME}
-          password: ${FERN_MAVEN_TOKEN}
         github:
           repository: flipt-io/flipt-java
       - name: fernapi/fern-openapi
