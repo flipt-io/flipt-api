@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/flipt-io/flipt-api/compare/0.1.2...0.1.3) (2022-11-30)
+
+
+### Bug Fixes
+
+* list query params are optional for segment list ([#31](https://github.com/flipt-io/flipt-api/issues/31)) ([68c8b21](https://github.com/flipt-io/flipt-api/commit/68c8b212ca56e3233df233b4bde578c694942f82))
+
 ## [0.1.2](https://github.com/flipt-io/flipt-api/compare/0.1.1...0.1.2) (2022-11-30)
 
 
