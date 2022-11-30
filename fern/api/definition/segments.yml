@@ -13,9 +13,9 @@ services:
           path: ""
           method: GET
           query-parameters:
-            limit: integer
-            offset: integer
-            pageToken: string
+            limit: optional<integer>
+            offset: optional<integer>
+            pageToken: optional<string>
           response: segmentList
 
         create:
