@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/flipt-io/flipt-api/compare/0.1.1...0.1.2) (2022-11-30)
+
+
+### Bug Fixes
+
+* remove commons.Pageable for now as mintlify doesnt support inheritance yet ([#29](https://github.com/flipt-io/flipt-api/issues/29)) ([63bd3c1](https://github.com/flipt-io/flipt-api/commit/63bd3c153b8115b260c7f5d41e1e7e7f9f8d09a6))
+
 ## [0.1.1](https://github.com/flipt-io/flipt-api/compare/0.1.0...0.1.1) (2022-11-25)
 
 
