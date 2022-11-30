@@ -3,5 +3,5 @@
 types:
   Pageable:
     properties:
-      nextPageToken: string
-      totalCount: integer
+      nextPageToken: optional<string>
+      totalCount: optional<integer>
