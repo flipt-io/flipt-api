@@ -10,7 +10,7 @@ groups:
         github:
           repository: flipt-io/flipt-node
       - name: fernapi/fern-java-sdk
-        version: 0.0.125
+        version: 0.0.130
         github:
           repository: flipt-io/flipt-java
       - name: fernapi/fern-openapi
