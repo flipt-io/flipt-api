@@ -13,3 +13,10 @@ jobs:
 
       - name: Check Fern API is valid
         run: fern check
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Lint Commit Messages
+        uses: wagoid/commitlint-github-action@v5
