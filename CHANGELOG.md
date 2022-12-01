@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/flipt-io/flipt-api/compare/0.1.3...0.1.4) (2022-12-01)
+
+
+### Bug Fixes
+
+* **api/auth:** add missing authentication key to create token response ([#34](https://github.com/flipt-io/flipt-api/issues/34)) ([9150b57](https://github.com/flipt-io/flipt-api/commit/9150b57534e59c631d4eed09d8c430168f81e800))
+
 ## [0.1.3](https://github.com/flipt-io/flipt-api/compare/0.1.2...0.1.3) (2022-11-30)
 
 
