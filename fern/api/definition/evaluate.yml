@@ -38,7 +38,7 @@ types:
       value: string
       requestDurationMillis: double
       attachment: string
-      reasons: evaluationReason
+      reason: evaluationReason
 
   evaluationReason:
     enum:
