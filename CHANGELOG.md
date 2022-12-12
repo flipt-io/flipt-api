@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/flipt-io/flipt-api/compare/0.1.4...0.1.5) (2022-12-12)
+
+
+### Bug Fixes
+
+* fix eval reason, not reasons ([#37](https://github.com/flipt-io/flipt-api/issues/37)) ([e12f98a](https://github.com/flipt-io/flipt-api/commit/e12f98a400e9291f60f8874b7d65fe997403a74c))
+
 ## [0.1.4](https://github.com/flipt-io/flipt-api/compare/0.1.3...0.1.4) (2022-12-01)
 
 
