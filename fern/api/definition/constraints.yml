@@ -11,7 +11,14 @@ services:
         create:
           path: ""
           method: POST
-          request: constraintCreateRequest
+          request:
+            name: constraintCreateRequest
+            body:
+              properties:
+                type: constraintComparisonType
+                property: string
+                operator: string
+                value: optional<string>
           response: constraint
 
         delete:
@@ -25,7 +32,14 @@ services:
           method: PUT
           path-parameters:
             id: string
-          request: constraintUpdateRequest
+          request:
+            name: constraintUpdateRequest
+            body:
+              properties:
+                type: constraintComparisonType
+                property: string
+                operator: string
+                value: optional<string>
 
 types:
   constraintComparisonType:
@@ -35,13 +49,6 @@ types:
       - STRING_COMPARISON_TYPE
       - NUMBER_COMPARISON_TYPE
       - BOOLEAN_COMPARISON_TYPE
-
-  constraintCreateRequest:
-    properties:
-      type: constraintComparisonType
-      property: string
-      operator: string
-      value: optional<string>
 
   constraint:
     properties:
@@ -53,10 +60,3 @@ types:
       value: string
       createdAt: datetime
       updatedAt: datetime
-
-  constraintUpdateRequest:
-    properties:
-      type: constraintComparisonType
-      property: string
-      operator: string
-      value: optional<string>

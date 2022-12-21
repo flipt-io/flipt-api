@@ -12,16 +12,25 @@ services:
         list:
           path: ""
           method: GET
-          query-parameters:
-            limit: optional<integer>
-            offset: optional<integer>
-            pageToken: optional<string>
           response: segmentList
+          request:
+            name: segmentListRequest
+            query-parameters:
+              limit: optional<integer>
+              offset: optional<integer>
+              pageToken: optional<string>
 
         create:
           path: ""
           method: POST
-          request: segmentCreateRequest
+          request:
+            name: segmentCreateRequest
+            body:
+              properties:
+                key: string
+                name: string
+                description: string
+                matchType: segmentMatchType
           response: segment
 
         get:
@@ -42,7 +51,13 @@ services:
           method: PUT
           path-parameters:
             key: string
-          request: segmentUpdateRequest
+          request:
+            name: segmentUpdateRequest
+            body:
+              properties:
+                name: string
+                description: string
+                matchType: segmentMatchType
           response: segment
 
 types:
@@ -66,16 +81,3 @@ types:
     enum:
       - ALL_MATCH_TYPE
       - ANY_MATCH_TYPE
-
-  segmentCreateRequest:
-    properties:
-      key: string
-      name: string
-      description: string
-      matchType: segmentMatchType
-
-  segmentUpdateRequest:
-    properties:
-      name: string
-      description: string
-      matchType: segmentMatchType

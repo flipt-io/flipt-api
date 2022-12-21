@@ -32,7 +32,13 @@ services:
         createToken:
           path: /method/token
           method: POST
-          request: authenticationTokenCreateRequest
+          request:
+            name: authenticationTokenCreateRequest
+            body:
+              properties:
+                name: string
+                description: string
+                expiresAt: optional<datetime>
           response: authenticationToken
 
 types:
@@ -55,12 +61,6 @@ types:
     properties:
       authentications: list<authentication>
       nextPageToken: string # TODO: replace with Pageable once we add `totalCount`
-
-  authenticationTokenCreateRequest:
-    properties:
-      name: string
-      description: string
-      expiresAt: optional<datetime>
 
   authenticationToken:
     properties:

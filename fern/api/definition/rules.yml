@@ -14,22 +14,33 @@ services:
         list:
           path: ""
           method: GET
-          query-parameters:
-            limit: optional<integer>
-            offset: optional<integer>
-            pageToken: optional<string>
           response: ruleList
+          request:
+            name: ruleListRequest
+            query-parameters:
+              limit: optional<integer>
+              offset: optional<integer>
+              pageToken: optional<string>
 
         create:
           path: ""
           method: POST
-          request: ruleCreateRequest
+          request:
+            name: ruleCreateRequest
+            body:
+              properties:
+                segmentKey: string
+                rank: integer
           response: rule
 
         order:
           path: /order
           method: PUT
-          request: ruleOrder
+          request:
+            name: ruleOrder
+            body:
+              properties:
+                ruleIds: list<string>
 
         get:
           path: /{id}
@@ -49,7 +60,11 @@ services:
           method: PUT
           path-parameters:
             id: string
-          request: ruleUpdateRequest
+          request:
+            name: ruleUpdateRequest
+            body:
+              properties:
+                segmentKey: string
 
 types:
   ruleList:
@@ -67,16 +82,3 @@ types:
       rank: integer
       createdAt: datetime
       updatedAt: datetime
-
-  ruleCreateRequest:
-    properties:
-      segmentKey: string
-      rank: integer
-
-  ruleOrder:
-    properties:
-      ruleIds: list<string>
-
-  ruleUpdateRequest:
-    properties:
-      segmentKey: string
