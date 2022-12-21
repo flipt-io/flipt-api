@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/flipt-io/flipt-api/compare/0.1.5...0.1.6) (2022-12-21)
+
+
+### Bug Fixes
+
+* fix eval context in request; upgrade fern ([#39](https://github.com/flipt-io/flipt-api/issues/39)) ([b9e39d9](https://github.com/flipt-io/flipt-api/commit/b9e39d943450a3bc3bee6f8d4c01740ca1ea154c))
+
 ## [0.1.5](https://github.com/flipt-io/flipt-api/compare/0.1.4...0.1.5) (2022-12-12)
 
 
