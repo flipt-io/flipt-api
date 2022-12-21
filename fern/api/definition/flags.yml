@@ -12,16 +12,25 @@ services:
         list:
           path: ""
           method: GET
-          query-parameters:
-            limit: optional<integer>
-            offset: optional<integer>
-            pageToken: optional<string>
           response: flagList
+          request:
+            name: flagListRequest
+            query-parameters:
+              limit: optional<integer>
+              offset: optional<integer>
+              pageToken: optional<string>
 
         create:
           path: ""
           method: POST
-          request: flagCreateRequest
+          request:
+            name: flagCreateRequest
+            body:
+              properties:
+                key: string
+                name: string
+                description: optional<string>
+                enabled: optional<boolean>
           response: flag
 
         get:
@@ -42,7 +51,13 @@ services:
           method: PUT
           path-parameters:
             key: string
-          request: flagUpdateRequest
+          request:
+            name: flagUpdateRequest
+            body:
+              properties:
+                name: string
+                description: optional<string>
+                enabled: optional<boolean>
           response: flag
 
 types:
@@ -61,16 +76,3 @@ types:
       createdAt: datetime
       updatedAt: datetime
       variants: list<variants.variant>
-
-  flagCreateRequest:
-    properties:
-      key: string
-      name: string
-      description: optional<string>
-      enabled: optional<boolean>
-
-  flagUpdateRequest:
-    properties:
-      name: string
-      description: optional<string>
-      enabled: optional<boolean>
