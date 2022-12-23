@@ -15,7 +15,7 @@ groups:
           location: maven
           coordinate: io.flipt:flipt-java
           username: ${FERN_MAVEN_USERNAME}
-          token: ${FERN_MAVEN_TOKEN}
+          password: ${FERN_MAVEN_TOKEN}
         github:
           repository: flipt-io/flipt-java
       - name: fernapi/fern-openapi
