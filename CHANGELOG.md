@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/flipt-io/flipt-api/compare/0.1.6...0.1.7) (2023-01-08)
+
+
+### Miscellaneous Chores
+
+* release 0.1.7 ([77971b7](https://github.com/flipt-io/flipt-api/commit/77971b7c21fdadda5e80ba4fb4f59574c859b129))
+
 ## [0.1.6](https://github.com/flipt-io/flipt-api/compare/0.1.5...0.1.6) (2022-12-21)
 
 
