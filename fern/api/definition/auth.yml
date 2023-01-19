@@ -29,6 +29,15 @@ services:
           method: GET
           response: authentication
 
+        expireSelf:
+          path: /self/expire
+          method: PUT
+          request:
+            name: authenticationExpireSelfRequest
+            body:
+              properties:
+                expiresAt: optional<datetime>
+
         createToken:
           path: /method/token
           method: POST
@@ -47,6 +56,7 @@ types:
     enum:
       - METHOD_NONE
       - METHOD_TOKEN
+      - METHOD_OIDC
 
   authentication:
     properties:
