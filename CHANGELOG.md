@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/flipt-io/flipt-api/compare/0.1.7...0.1.8) (2023-01-23)
+
+
+### Features
+
+* add expire self endpoint def ([#43](https://github.com/flipt-io/flipt-api/issues/43)) ([6637b02](https://github.com/flipt-io/flipt-api/commit/6637b022eaf7b6b0568c0942993a3b3ac53c925f))
+
 ## [0.1.7](https://github.com/flipt-io/flipt-api/compare/0.1.6...0.1.7) (2023-01-08)
 
 
