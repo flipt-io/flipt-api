@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
 
 imports:
-  authentication: auth.yml
+  auth: auth.yml
 
 service:
   base-path: /auth/v1/method/oidc
@@ -36,4 +36,4 @@ types:
 
   oidcCallbackResponse:
     properties:
-      authentication: authentication
+      authentication: auth.authentication
