@@ -38,8 +38,12 @@ services:
               properties:
                 expiresAt: optional<datetime>
 
+    AuthenticationMethodToken:
+      base-path: /auth/v1/method/token
+      auth: true
+      endpoints:
         createToken:
-          path: /method/token
+          path: /
           method: POST
           request:
             name: authenticationTokenCreateRequest
@@ -49,6 +53,32 @@ services:
                 description: string
                 expiresAt: optional<datetime>
           response: authenticationToken
+
+    AuthenticationMethodOIDC:
+      base-path: /auth/v1/method/oidc
+      auth: false
+      endpoints:
+        authorizeURL:
+          path: /{provider}/authorize
+          method: GET
+          path-parameters:
+            provider: string
+          request:
+            name: oidcAuthorizeURLRequest
+            query-parameters:
+              state: string
+          response: oidcAuthorizeURLResponse
+        callback:
+          path: /{provider}/callback
+          method: GET
+          path-parameters:
+              provider: string
+          request:
+            name: oidcCallbackRequest
+            query-parameters:
+              code: string
+              state: string
+          response: oidcCallbackResponse
 
 types:
   authenticationMethod:
@@ -75,4 +105,12 @@ types:
   authenticationToken:
     properties:
       clientToken: string
+      authentication: authentication
+
+  oidcAuthorizeURLResponse:
+    properties:
+      authorizeUrl: string
+
+  oidcCallbackResponse:
+    properties:
       authentication: authentication
