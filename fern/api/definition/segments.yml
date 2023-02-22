@@ -3,62 +3,60 @@
 imports:
   constraints: constraints.yml
 
-services:
-  http:
-    Segments:
-      base-path: /api/v1/segments
-      auth: true
-      endpoints:
-        list:
-          path: ""
-          method: GET
-          response: segmentList
-          request:
-            name: segmentListRequest
-            query-parameters:
-              limit: optional<integer>
-              offset: optional<integer>
-              pageToken: optional<string>
+service:
+  base-path: /api/v1/segments
+  auth: true
+  endpoints:
+    list:
+      path: ""
+      method: GET
+      response: segmentList
+      request:
+        name: segmentListRequest
+        query-parameters:
+          limit: optional<integer>
+          offset: optional<integer>
+          pageToken: optional<string>
 
-        create:
-          path: ""
-          method: POST
-          request:
-            name: segmentCreateRequest
-            body:
-              properties:
-                key: string
-                name: string
-                description: string
-                matchType: segmentMatchType
-          response: segment
-
-        get:
-          path: /{key}
-          method: GET
-          path-parameters:
+    create:
+      path: ""
+      method: POST
+      request:
+        name: segmentCreateRequest
+        body:
+          properties:
             key: string
-          response: segment
+            name: string
+            description: string
+            matchType: segmentMatchType
+      response: segment
 
-        delete:
-          path: /{key}
-          method: DELETE
-          path-parameters:
-            key: string
+    get:
+      path: /{key}
+      method: GET
+      path-parameters:
+        key: string
+      response: segment
 
-        update:
-          path: /{key}
-          method: PUT
-          path-parameters:
-            key: string
-          request:
-            name: segmentUpdateRequest
-            body:
-              properties:
-                name: string
-                description: string
-                matchType: segmentMatchType
-          response: segment
+    delete:
+      path: /{key}
+      method: DELETE
+      path-parameters:
+        key: string
+
+    update:
+      path: /{key}
+      method: PUT
+      path-parameters:
+        key: string
+      request:
+        name: segmentUpdateRequest
+        body:
+          properties:
+            name: string
+            description: string
+            matchType: segmentMatchType
+      response: segment
 
 types:
   segmentList:

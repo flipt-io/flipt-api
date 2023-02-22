@@ -3,62 +3,60 @@
 imports:
   variants: variants.yml
 
-services:
-  http:
-    Flags:
-      base-path: /api/v1/flags
-      auth: true
-      endpoints:
-        list:
-          path: ""
-          method: GET
-          response: flagList
-          request:
-            name: flagListRequest
-            query-parameters:
-              limit: optional<integer>
-              offset: optional<integer>
-              pageToken: optional<string>
+service:
+  base-path: /api/v1/flags
+  auth: true
+  endpoints:
+    list:
+      path: ""
+      method: GET
+      response: flagList
+      request:
+        name: flagListRequest
+        query-parameters:
+          limit: optional<integer>
+          offset: optional<integer>
+          pageToken: optional<string>
 
-        create:
-          path: ""
-          method: POST
-          request:
-            name: flagCreateRequest
-            body:
-              properties:
-                key: string
-                name: string
-                description: optional<string>
-                enabled: optional<boolean>
-          response: flag
-
-        get:
-          path: /{key}
-          method: GET
-          path-parameters:
+    create:
+      path: ""
+      method: POST
+      request:
+        name: flagCreateRequest
+        body:
+          properties:
             key: string
-          response: flag
+            name: string
+            description: optional<string>
+            enabled: optional<boolean>
+      response: flag
 
-        delete:
-          path: /{key}
-          method: DELETE
-          path-parameters:
-            key: string
+    get:
+      path: /{key}
+      method: GET
+      path-parameters:
+        key: string
+      response: flag
 
-        update:
-          path: /{key}
-          method: PUT
-          path-parameters:
-            key: string
-          request:
-            name: flagUpdateRequest
-            body:
-              properties:
-                name: string
-                description: optional<string>
-                enabled: optional<boolean>
-          response: flag
+    delete:
+      path: /{key}
+      method: DELETE
+      path-parameters:
+        key: string
+
+    update:
+      path: /{key}
+      method: PUT
+      path-parameters:
+        key: string
+      request:
+        name: flagUpdateRequest
+        body:
+          properties:
+            name: string
+            description: optional<string>
+            enabled: optional<boolean>
+      response: flag
 
 types:
   flagList:

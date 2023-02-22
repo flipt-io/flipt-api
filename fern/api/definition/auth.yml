@@ -1,98 +1,40 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
 
-services:
-  http:
-    Authentication:
-      base-path: /auth/v1
-      auth: true
-      endpoints:
-        listTokens:
-          path: /tokens
-          method: GET
-          response: authenticationList
+service:
+  base-path: /auth/v1
+  auth: true
+  endpoints:
+    listTokens:
+      path: /tokens
+      method: GET
+      response: authenticationList
 
-        getToken:
-          path: /tokens/{id}
-          method: GET
-          path-parameters:
-            id: string
-          response: authentication
+    getToken:
+      path: /tokens/{id}
+      method: GET
+      path-parameters:
+        id: string
+      response: authentication
 
-        deleteToken:
-          path: /tokens/{id}
-          method: DELETE
-          path-parameters:
-            id: string
+    deleteToken:
+      path: /tokens/{id}
+      method: DELETE
+      path-parameters:
+        id: string
 
-        getSelf:
-          path: /self
-          method: GET
-          response: authentication
+    getSelf:
+      path: /self
+      method: GET
+      response: authentication
 
-        expireSelf:
-          path: /self/expire
-          method: PUT
-          request:
-            name: authenticationExpireSelfRequest
-            body:
-              properties:
-                expiresAt: optional<datetime>
-
-    AuthenticationMethodToken:
-      base-path: /auth/v1/method/token
-      auth: true
-      endpoints:
-        createToken:
-          path: /
-          method: POST
-          request:
-            name: authenticationTokenCreateRequest
-            body:
-              properties:
-                name: string
-                description: string
-                expiresAt: optional<datetime>
-          response: authenticationToken
-
-    AuthenticationMethodOIDC:
-      base-path: /auth/v1/method/oidc
-      auth: false
-      endpoints:
-        authorizeURL:
-          path: /{provider}/authorize
-          method: GET
-          path-parameters:
-            provider: string
-          request:
-            name: oidcAuthorizeURLRequest
-            query-parameters:
-              state: string
-          response: oidcAuthorizeURLResponse
-        callback:
-          path: /{provider}/callback
-          method: GET
-          path-parameters:
-              provider: string
-          request:
-            name: oidcCallbackRequest
-            query-parameters:
-              code: string
-              state: string
-          response: oidcCallbackResponse
-
-    AuthenticationMethodKubernetes:
-      base-path: /auth/v1/method/kubernetes
-      auth: false
-      endpoints:
-        verifyServiceAccount:
-          path: /serviceaccount
-          method: POST
-          request:
-            name: kubernetesVerifyServiceAccount
-            body:
-              properties:
-                serviceAccountToken: string
-          response: authenticationToken
+    expireSelf:
+      path: /self/expire
+      method: PUT
+      request:
+        name: authenticationExpireSelfRequest
+        body:
+          properties:
+            expiresAt: optional<datetime>
 
 types:
   authenticationMethod:
@@ -101,6 +43,7 @@ types:
       - METHOD_NONE
       - METHOD_TOKEN
       - METHOD_OIDC
+      - METHOD_KUBERNETES
 
   authentication:
     properties:
@@ -119,12 +62,4 @@ types:
   authenticationToken:
     properties:
       clientToken: string
-      authentication: authentication
-
-  oidcAuthorizeURLResponse:
-    properties:
-      authorizeUrl: string
-
-  oidcCallbackResponse:
-    properties:
       authentication: authentication

@@ -1,46 +1,44 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
 
-services:
-  http:
-    Variants:
-      base-path: /api/v1/flags/{flagKey}/variants
-      auth: true
+service:
+  base-path: /api/v1/flags/{flagKey}/variants
+  auth: true
+  path-parameters:
+    flagKey: string
+  endpoints:
+    create:
+      path: ""
+      method: POST
+      request:
+        name: variantCreateRequest
+        body:
+          properties:
+            key: string
+            name: optional<string>
+            description: optional<string>
+            attachment: optional<string>
+      response: variant
+
+    delete:
+      path: /{id}
+      method: DELETE
       path-parameters:
-        flagKey: string
-      endpoints:
-        create:
-          path: ""
-          method: POST
-          request:
-            name: variantCreateRequest
-            body:
-              properties:
-                key: string
-                name: optional<string>
-                description: optional<string>
-                attachment: optional<string>
-          response: variant
+        id: string
 
-        delete:
-          path: /{id}
-          method: DELETE
-          path-parameters:
-            id: string
-
-        update:
-          path: /{id}
-          method: PUT
-          path-parameters:
-            id: string
-          request:
-            name: variantUpdateRequest
-            body:
-              properties:
-                key: string
-                name: optional<string>
-                description: optional<string>
-                attachment: optional<string>
-          response: variant
+    update:
+      path: /{id}
+      method: PUT
+      path-parameters:
+        id: string
+      request:
+        name: variantUpdateRequest
+        body:
+          properties:
+            key: string
+            name: optional<string>
+            description: optional<string>
+            attachment: optional<string>
+      response: variant
 
 types:
   variant:
