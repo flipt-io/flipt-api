@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  authenticationToken: auth.yml
+
+service:
+  base-path: /auth/v1/method/kubernetes
+  auth: false
+  endpoints:
+    verifyServiceAccount:
+      path: /serviceaccount
+      method: POST
+      request:
+        name: kubernetesVerifyServiceAccount
+        body:
+          properties:
+            serviceAccountToken: string
+      response: authenticationToken

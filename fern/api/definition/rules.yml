@@ -3,68 +3,66 @@
 imports:
   distributions: distributions.yml
 
-services:
-  http:
-    Rules:
-      base-path: /api/v1/flags/{flagKey}/rules
-      auth: true
+service:
+  base-path: /api/v1/flags/{flagKey}/rules
+  auth: true
+  path-parameters:
+    flagKey: string
+  endpoints:
+    list:
+      path: ""
+      method: GET
+      response: ruleList
+      request:
+        name: ruleListRequest
+        query-parameters:
+          limit: optional<integer>
+          offset: optional<integer>
+          pageToken: optional<string>
+
+    create:
+      path: ""
+      method: POST
+      request:
+        name: ruleCreateRequest
+        body:
+          properties:
+            segmentKey: string
+            rank: integer
+      response: rule
+
+    order:
+      path: /order
+      method: PUT
+      request:
+        name: ruleOrder
+        body:
+          properties:
+            ruleIds: list<string>
+
+    get:
+      path: /{id}
+      method: GET
       path-parameters:
-        flagKey: string
-      endpoints:
-        list:
-          path: ""
-          method: GET
-          response: ruleList
-          request:
-            name: ruleListRequest
-            query-parameters:
-              limit: optional<integer>
-              offset: optional<integer>
-              pageToken: optional<string>
+        id: string
+      response: rule
 
-        create:
-          path: ""
-          method: POST
-          request:
-            name: ruleCreateRequest
-            body:
-              properties:
-                segmentKey: string
-                rank: integer
-          response: rule
+    delete:
+      path: /{id}
+      method: DELETE
+      path-parameters:
+        id: string
 
-        order:
-          path: /order
-          method: PUT
-          request:
-            name: ruleOrder
-            body:
-              properties:
-                ruleIds: list<string>
-
-        get:
-          path: /{id}
-          method: GET
-          path-parameters:
-            id: string
-          response: rule
-
-        delete:
-          path: /{id}
-          method: DELETE
-          path-parameters:
-            id: string
-
-        update:
-          path: /{id}
-          method: PUT
-          path-parameters:
-            id: string
-          request:
-            name: ruleUpdateRequest
-            body:
-              properties:
-                segmentKey: string
+    update:
+      path: /{id}
+      method: PUT
+      path-parameters:
+        id: string
+      request:
+        name: ruleUpdateRequest
+        body:
+          properties:
+            segmentKey: string
 
 types:
   ruleList:

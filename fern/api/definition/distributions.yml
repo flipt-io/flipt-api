@@ -1,47 +1,45 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
 
-services:
-  http:
-    Distributions:
-      base-path: /api/v1/flags/{flagKey}/rules/{ruleId}/distributions
-      auth: true
+service:
+  base-path: /api/v1/flags/{flagKey}/rules/{ruleId}/distributions
+  auth: true
+  path-parameters:
+    flagKey: string
+    ruleId: string
+  endpoints:
+    create:
+      path: ""
+      method: POST
+      request:
+        name: distributionCreateRequest
+        body:
+          properties:
+            variantId: string
+            rollout: double
+      response: distribution
+
+    delete:
+      path: /{id}
+      method: DELETE
       path-parameters:
-        flagKey: string
-        ruleId: string
-      endpoints:
-        create:
-          path: ""
-          method: POST
-          request:
-            name: distributionCreateRequest
-            body:
-              properties:
-                variantId: string
-                rollout: double
-          response: distribution
+        id: string
+      request:
+        name: distributionDeleteRequest
+        query-parameters:
+          variantId: string
 
-        delete:
-          path: /{id}
-          method: DELETE
-          path-parameters:
-            id: string
-          request:
-            name: distributionDeleteRequest
-            query-parameters:
-              variantId: string
-
-        update:
-          path: /{id}
-          method: PUT
-          path-parameters:
-            id: string
-          request:
-            name: distributionUpdateRequest
-            body:
-              properties:
-                variantId: string
-                rollout: double
-          response: distribution
+    update:
+      path: /{id}
+      method: PUT
+      path-parameters:
+        id: string
+      request:
+        name: distributionUpdateRequest
+        body:
+          properties:
+            variantId: string
+            rollout: double
+      response: distribution
 
 types:
   distribution:

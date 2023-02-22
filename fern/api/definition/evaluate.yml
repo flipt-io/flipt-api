@@ -1,28 +1,26 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
 
-services:
-  http:
-    Evaluation:
-      base-path: /api/v1
-      auth: true
-      endpoints:
-        evaluate:
-          path: /evaluate
-          method: POST
-          request: evaluationRequest
-          response: evaluationResponse
+service:
+  base-path: /api/v1
+  auth: true
+  endpoints:
+    evaluate:
+      path: /evaluate
+      method: POST
+      request: evaluationRequest
+      response: evaluationResponse
 
-        batchEvaluate:
-          path: /batch-evaluate
-          method: POST
-          request:
-            name: batchEvaluationRequest
-            body:
-              properties:
-                requestId: optional<string>
-                requests: list<evaluationRequest>
-                excludeNotFound: optional<boolean>
-          response: batchEvaluationResponse
+    batchEvaluate:
+      path: /batch-evaluate
+      method: POST
+      request:
+        name: batchEvaluationRequest
+        body:
+          properties:
+            requestId: optional<string>
+            requests: list<evaluationRequest>
+            excludeNotFound: optional<boolean>
+      response: batchEvaluationResponse
 
 types:
   evaluationRequest:
