@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/flipt-io/flipt-api/compare/0.1.8...0.1.9) (2023-02-22)
+
+
+### Features
+
+* **auth:** add OIDC and Kubernetes definitions to API docs ([#45](https://github.com/flipt-io/flipt-api/issues/45)) ([68d569e](https://github.com/flipt-io/flipt-api/commit/68d569e63553dde29e327ed529e4281eb7efb0cf))
+
 ## [0.1.8](https://github.com/flipt-io/flipt-api/compare/0.1.7...0.1.8) (2023-01-23)
 
 
