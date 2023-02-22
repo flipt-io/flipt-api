@@ -80,6 +80,20 @@ services:
               state: string
           response: oidcCallbackResponse
 
+    AuthenticationMethodKubernetes:
+      base-path: /auth/v1/method/kubernetes
+      auth: false
+      endpoints:
+        verifyServiceAccount:
+          path: /serviceaccount
+          method: POST
+          request:
+            name: kubernetesVerifyServiceAccount
+            body:
+              properties:
+                serviceAccountToken: string
+          response: authenticationToken
+
 types:
   authenticationMethod:
     docs: The default is METHOD_NONE
