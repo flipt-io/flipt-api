@@ -23,7 +23,7 @@ groups:
         output:
           location: pypi
           package-name: flipt
-          token: ${PYPI_TOKEN}
+          token: ${FERN_PYPI_TOKEN}
         github:
           repository: flipt-io/flipt-python
       - name: fernapi/fern-openapi
