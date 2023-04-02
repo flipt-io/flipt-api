@@ -10,7 +10,7 @@ groups:
         github:
           repository: flipt-io/flipt-node
       - name: fernapi/fern-java-sdk
-        version: 0.0.130
+        version: 0.1.0
         output:
           location: maven
           coordinate: io.flipt:flipt-java
