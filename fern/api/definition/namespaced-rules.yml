@@ -16,7 +16,7 @@ service:
       method: GET
       response: rules.ruleList
       request:
-        name: rules.ruleListRequest
+        name: namespacedRuleListRequest
         query-parameters:
           limit: optional<integer>
           offset: optional<integer>
@@ -26,7 +26,7 @@ service:
       path: ""
       method: POST
       request:
-        name: rules.ruleCreateRequest
+        name: namespacedRuleCreateRequest
         body:
           properties:
             segmentKey: string
@@ -61,7 +61,7 @@ service:
       path-parameters:
         id: string
       request:
-        name: rules.ruleUpdateRequest
+        name: namespacedRuleUpdateRequest
         body:
           properties:
             segmentKey: string

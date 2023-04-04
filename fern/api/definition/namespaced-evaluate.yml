@@ -19,7 +19,7 @@ service:
       path: /batch-evaluate
       method: POST
       request:
-        name: evaluate.batchEvaluationRequest
+        name: namespacedBatchEvaluationRequest
         body:
           properties:
             requestId: optional<string>

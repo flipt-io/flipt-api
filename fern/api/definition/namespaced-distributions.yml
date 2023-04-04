@@ -15,7 +15,7 @@ service:
       path: ""
       method: POST
       request:
-        name: distributions.distributionCreateRequest
+        name: namespacedDistributionCreateRequest
         body:
           properties:
             variantId: string
@@ -28,7 +28,7 @@ service:
       path-parameters:
         id: string
       request:
-        name: distributions.distributionDeleteRequest
+        name: namespacedDistributionDeleteRequest
         query-parameters:
           variantId: string
 
@@ -38,7 +38,7 @@ service:
       path-parameters:
         id: string
       request:
-        name: distributions.distributionUpdateRequest
+        name: namespacedDistributionUpdateRequest
         body:
           properties:
             variantId: string

@@ -24,7 +24,7 @@ service:
       path: ""
       method: POST
       request:
-        name: namespacesFlagCreateRequest
+        name: namespacedFlagCreateRequest
         body:
           properties:
             key: string
