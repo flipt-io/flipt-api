@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  variants: variants.yml
+
+service:
+  base-path: /api/v1/namespaces/{namespaceKey}/flags/{flagKey}/variants
+  auth: true
+  path-parameters:
+    namespaceKey: string
+    flagKey: string
+  endpoints:
+    create:
+      path: ""
+      method: POST
+      request:
+        name: namespacedVariantCreateRequest
+        body:
+          properties:
+            key: string
+            name: optional<string>
+            description: optional<string>
+            attachment: optional<string>
+      response: variants.variant
+
+    delete:
+      path: /{id}
+      method: DELETE
+      path-parameters:
+        id: string
+
+    update:
+      path: /{id}
+      method: PUT
+      path-parameters:
+        id: string
+      request:
+        name: namespacedVariantUpdateRequest
+        body:
+          properties:
+            key: string
+            name: optional<string>
+            description: optional<string>
+            attachment: optional<string>
+      response: variants.variant
