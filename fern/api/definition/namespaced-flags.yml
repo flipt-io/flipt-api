@@ -23,14 +23,7 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: namespacedFlagCreateRequest
-        body:
-          properties:
-            key: string
-            name: string
-            description: optional<string>
-            enabled: optional<boolean>
+      request: flags.flagCreateRequest
       response: flags.flag
 
     get:
@@ -51,11 +44,5 @@ service:
       method: PUT
       path-parameters:
         key: string
-      request:
-        name: namespacedFlagUpdateRequest
-        body:
-          properties:
-            name: string
-            description: optional<string>
-            enabled: optional<boolean>
+      request: flags.flagUpdateRequest
       response: flags.flag

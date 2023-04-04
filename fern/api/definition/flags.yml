@@ -21,14 +21,7 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: flagCreateRequest
-        body:
-          properties:
-            key: string
-            name: string
-            description: optional<string>
-            enabled: optional<boolean>
+      request: flagCreateRequest
       response: flag
 
     get:
@@ -49,13 +42,7 @@ service:
       method: PUT
       path-parameters:
         key: string
-      request:
-        name: flagUpdateRequest
-        body:
-          properties:
-            name: string
-            description: optional<string>
-            enabled: optional<boolean>
+      request: flagUpdateRequest
       response: flag
 
 types:
@@ -74,3 +61,16 @@ types:
       createdAt: datetime
       updatedAt: datetime
       variants: list<variants.variant>
+
+  flagCreateRequest:
+    properties:
+      key: string
+      name: string
+      description: optional<string>
+      enabled: optional<boolean>
+
+  flagUpdateRequest:
+    properties:
+      name: string
+      description: optional<string>
+      enabled: optional<boolean>
