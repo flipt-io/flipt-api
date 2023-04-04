@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  rules: rules.yml
+  distributions: distributions.yml
+
+service:
+  base-path: /api/v1/namespaces/{namespaceKey}/flags/{flagKey}/rules
+  auth: true
+  path-parameters:
+    namespaceKey: string
+    flagKey: string
+  endpoints:
+    list:
+      path: ""
+      method: GET
+      response: rules.ruleList
+      request:
+        name: rules.ruleListRequest
+        query-parameters:
+          limit: optional<integer>
+          offset: optional<integer>
+          pageToken: optional<string>
+
+    create:
+      path: ""
+      method: POST
+      request:
+        name: rules.ruleCreateRequest
+        body:
+          properties:
+            segmentKey: string
+            rank: integer
+      response: rules.rule
+
+    order:
+      path: /order
+      method: PUT
+      request:
+        name: rules.ruleOrder
+        body:
+          properties:
+            ruleIds: list<string>
+
+    get:
+      path: /{id}
+      method: GET
+      path-parameters:
+        id: string
+      response: rules.rule
+
+    delete:
+      path: /{id}
+      method: DELETE
+      path-parameters:
+        id: string
+
+    update:
+      path: /{id}
+      method: PUT
+      path-parameters:
+        id: string
+      request:
+        name: rules.ruleUpdateRequest
+        body:
+          properties:
+            segmentKey: string
