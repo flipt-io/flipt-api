@@ -9,14 +9,7 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: variantCreateRequest
-        body:
-          properties:
-            key: string
-            name: optional<string>
-            description: optional<string>
-            attachment: optional<string>
+      request: variantCreateRequest
       response: variant
 
     delete:
@@ -30,14 +23,7 @@ service:
       method: PUT
       path-parameters:
         id: string
-      request:
-        name: variantUpdateRequest
-        body:
-          properties:
-            key: string
-            name: optional<string>
-            description: optional<string>
-            attachment: optional<string>
+      request: variantUpdateRequest
       response: variant
 
 types:
@@ -51,3 +37,17 @@ types:
       createdAt: datetime
       updatedAt: datetime
       attachment: string
+
+  variantCreateRequest:
+    properties:
+      key: string
+      name: optional<string>
+      description: optional<string>
+      attachment: optional<string>
+
+  variantUpdateRequest:
+    properties:
+      key: string
+      name: optional<string>
+      description: optional<string>
+      attachment: optional<string>

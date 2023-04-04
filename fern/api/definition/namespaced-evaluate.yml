@@ -18,11 +18,5 @@ service:
     batchEvaluate:
       path: /batch-evaluate
       method: POST
-      request:
-        name: namespacedBatchEvaluationRequest
-        body:
-          properties:
-            requestId: optional<string>
-            requests: list<evaluate.evaluationRequest>
-            excludeNotFound: optional<boolean>
+      request: evaluate.batchEvaluationRequest
       response: evaluate.batchEvaluationResponse

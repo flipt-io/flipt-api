@@ -21,14 +21,7 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: segmentCreateRequest
-        body:
-          properties:
-            key: string
-            name: string
-            description: string
-            matchType: segmentMatchType
+      request: segmentCreateRequest
       response: segment
 
     get:
@@ -49,13 +42,7 @@ service:
       method: PUT
       path-parameters:
         key: string
-      request:
-        name: segmentUpdateRequest
-        body:
-          properties:
-            name: string
-            description: string
-            matchType: segmentMatchType
+      request: segmentUpdateRequest
       response: segment
 
 types:
@@ -79,3 +66,16 @@ types:
     enum:
       - ALL_MATCH_TYPE
       - ANY_MATCH_TYPE
+
+  segmentCreateRequest:
+    properties:
+      key: string
+      name: string
+      description: string
+      matchType: segmentMatchType
+
+  segmentUpdateRequest:
+    properties:
+      name: string
+      description: string
+      matchType: segmentMatchType

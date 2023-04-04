@@ -13,13 +13,7 @@ service:
     batchEvaluate:
       path: /batch-evaluate
       method: POST
-      request:
-        name: batchEvaluationRequest
-        body:
-          properties:
-            requestId: optional<string>
-            requests: list<evaluationRequest>
-            excludeNotFound: optional<boolean>
+      request: batchEvaluationRequest
       response: batchEvaluationResponse
 
 types:
@@ -51,6 +45,12 @@ types:
       - FLAG_NOT_FOUND_EVALUATION_REASON
       - MATCH_EVALUATION_REASON
       - ERROR_EVALUATION_REASON
+
+  batchEvaluationRequest:
+    properties:
+      requestId: optional<string>
+      requests: list<evaluationRequest>
+      excludeNotFound: optional<boolean>
 
   batchEvaluationResponse:
     properties:

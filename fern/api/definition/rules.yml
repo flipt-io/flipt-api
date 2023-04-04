@@ -23,22 +23,13 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: ruleCreateRequest
-        body:
-          properties:
-            segmentKey: string
-            rank: integer
+      request: ruleCreateRequest
       response: rule
 
     order:
       path: /order
       method: PUT
-      request:
-        name: ruleOrder
-        body:
-          properties:
-            ruleIds: list<string>
+      request: ruleOrder
 
     get:
       path: /{id}
@@ -58,11 +49,7 @@ service:
       method: PUT
       path-parameters:
         id: string
-      request:
-        name: ruleUpdateRequest
-        body:
-          properties:
-            segmentKey: string
+      request: ruleUpdateRequest
 
 types:
   ruleList:
@@ -80,3 +67,16 @@ types:
       rank: integer
       createdAt: datetime
       updatedAt: datetime
+
+  ruleCreateRequest:
+    properties:
+      segmentKey: string
+      rank: integer
+
+  ruleOrder:
+    properties:
+      ruleIds: list<string>
+
+  ruleUpdateRequest:
+    properties:
+      segmentKey: string

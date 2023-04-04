@@ -25,22 +25,13 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: namespacedRuleCreateRequest
-        body:
-          properties:
-            segmentKey: string
-            rank: integer
+      request: rules.ruleCreateRequest
       response: rules.rule
 
     order:
       path: /order
       method: PUT
-      request:
-        name: rules.ruleOrder
-        body:
-          properties:
-            ruleIds: list<string>
+      request: rules.ruleOrder
 
     get:
       path: /{id}
@@ -60,8 +51,4 @@ service:
       method: PUT
       path-parameters:
         id: string
-      request:
-        name: namespacedRuleUpdateRequest
-        body:
-          properties:
-            segmentKey: string
+      request: rules.ruleUpdateRequest

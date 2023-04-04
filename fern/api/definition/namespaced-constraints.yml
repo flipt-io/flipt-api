@@ -13,14 +13,7 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: namespacedConstraintCreateRequest
-        body:
-          properties:
-            type: constraints.constraintComparisonType
-            property: string
-            operator: string
-            value: optional<string>
+      request: constraints.constraintCreateRequest
       response: constraints.constraint
 
     delete:
@@ -34,11 +27,4 @@ service:
       method: PUT
       path-parameters:
         id: string
-      request:
-        name: namespacedConstraintUpdateRequest
-        body:
-          properties:
-            type: constraints.constraintComparisonType
-            property: string
-            operator: string
-            value: optional<string>
+      request: constraints.constraintUpdateRequest

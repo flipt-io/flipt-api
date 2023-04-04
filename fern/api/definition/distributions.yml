@@ -10,12 +10,7 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: distributionCreateRequest
-        body:
-          properties:
-            variantId: string
-            rollout: double
+      request: distributionCreateRequest
       response: distribution
 
     delete:
@@ -33,12 +28,7 @@ service:
       method: PUT
       path-parameters:
         id: string
-      request:
-        name: distributionUpdateRequest
-        body:
-          properties:
-            variantId: string
-            rollout: double
+      request: distributionUpdateRequest
       response: distribution
 
 types:
@@ -50,3 +40,13 @@ types:
       rollout: double
       createdAt: datetime
       updatedAt: datetime
+
+  distributionCreateRequest:
+    properties:
+      variantId: string
+      rollout: double
+
+  distributionUpdateRequest:
+    properties:
+      variantId: string
+      rollout: double

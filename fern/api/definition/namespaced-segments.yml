@@ -24,14 +24,7 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: namespacedSegmentCreateRequest
-        body:
-          properties:
-            key: string
-            name: string
-            description: string
-            matchType: segments.segmentMatchType
+      request: segments.segmentCreateRequest
       response: segments.segment
 
     get:
@@ -52,11 +45,5 @@ service:
       method: PUT
       path-parameters:
         key: string
-      request:
-        name: namespacedSegmentUpdateRequest
-        body:
-          properties:
-            name: string
-            description: string
-            matchType: segments.segmentMatchType
+      request: segments.segmentUpdateRequest
       response: segments.segment
