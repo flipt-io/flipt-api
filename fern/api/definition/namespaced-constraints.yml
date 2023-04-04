@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  constraints: constraints.yml
+
+service:
+  base-path: /api/v1/namespaces/{namespaceKey}/segments/{segmentKey}/constraints
+  auth: true
+  path-parameters:
+    namespaceKey: string
+    segmentKey: string
+  endpoints:
+    create:
+      path: ""
+      method: POST
+      request:
+        name: constraints.constraintCreateRequest
+        body:
+          properties:
+            type: constraints.constraintComparisonType
+            property: string
+            operator: string
+            value: optional<string>
+      response: constraints.constraint
+
+    delete:
+      path: /{id}
+      method: DELETE
+      path-parameters:
+        id: string
+
+    update:
+      path: /{id}
+      method: PUT
+      path-parameters:
+        id: string
+      request:
+        name: constraints.constraintUpdateRequest
+        body:
+          properties:
+            type: constraints.constraintComparisonType
+            property: string
+            operator: string
+            value: optional<string>
