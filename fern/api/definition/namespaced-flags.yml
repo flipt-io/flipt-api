@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  flags: flags.yml
+
+service:
+  base-path: /api/v1/namespaces/{namespaceKey}/flags
+  auth: true
+  path-parameters:
+    namespaceKey: string
+  endpoints:
+    list:
+      path: ""
+      method: GET
+      response: flags.flagList
+      request:
+        name: namespacedFlagListRequest
+        query-parameters:
+          limit: optional<integer>
+          offset: optional<integer>
+          pageToken: optional<string>
+
+    create:
+      path: ""
+      method: POST
+      request:
+        name: namespacesFlagCreateRequest
+        body:
+          properties:
+            key: string
+            name: string
+            description: optional<string>
+            enabled: optional<boolean>
+      response: flags.flag
+
+    get:
+      path: /{key}
+      method: GET
+      path-parameters:
+        key: string
+      response: flags.flag
+
+    delete:
+      path: /{key}
+      method: DELETE
+      path-parameters:
+        key: string
+
+    update:
+      path: /{key}
+      method: PUT
+      path-parameters:
+        key: string
+      request:
+        name: namespacedFlagUpdateRequest
+        body:
+          properties:
+            name: string
+            description: optional<string>
+            enabled: optional<boolean>
+      response: flags.flag
