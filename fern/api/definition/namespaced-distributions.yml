@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  distributions: distributions.yml
+
+service:
+  base-path: /api/v1/namespaces/{namespaceKey}/flags/{flagKey}/rules/{ruleId}/distributions
+  auth: true
+  path-parameters:
+    namespaceKey: string
+    flagKey: string
+    ruleId: string
+  endpoints:
+    create:
+      path: ""
+      method: POST
+      request:
+        name: distributions.distributionCreateRequest
+        body:
+          properties:
+            variantId: string
+            rollout: double
+      response: distributions.distribution
+
+    delete:
+      path: /{id}
+      method: DELETE
+      path-parameters:
+        id: string
+      request:
+        name: distributions.distributionDeleteRequest
+        query-parameters:
+          variantId: string
+
+    update:
+      path: /{id}
+      method: PUT
+      path-parameters:
+        id: string
+      request:
+        name: distributions.distributionUpdateRequest
+        body:
+          properties:
+            variantId: string
+            rollout: double
+      response: distributions.distribution
