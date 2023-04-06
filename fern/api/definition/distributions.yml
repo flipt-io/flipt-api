@@ -6,6 +6,7 @@ service:
   path-parameters:
     namespaceKey: string
     flagKey: string
+
     ruleId: string
   endpoints:
     create:
