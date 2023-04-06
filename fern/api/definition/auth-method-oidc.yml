@@ -17,6 +17,7 @@ service:
         query-parameters:
           state: string
       response: oidcAuthorizeURLResponse
+
     callback:
       path: /{provider}/callback
       method: GET

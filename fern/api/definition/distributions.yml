@@ -5,6 +5,7 @@ service:
   auth: true
   path-parameters:
     flagKey: string
+
     ruleId: string
   endpoints:
     create:
