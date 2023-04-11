@@ -4,8 +4,10 @@ imports:
   variants: variants.yml
 
 service:
-  base-path: /api/v1/flags
+  base-path: /api/v1/namespaces/{namespaceKey}/flags
   auth: true
+  path-parameters:
+    namespaceKey: string
   endpoints:
     list:
       path: ""

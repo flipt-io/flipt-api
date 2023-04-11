@@ -4,7 +4,9 @@ imports:
   constraints: constraints.yml
 
 service:
-  base-path: /api/v1/segments
+  base-path: /api/v1/namespaces/{namespaceKey}/segments
+  path-parameters:
+    namespaceKey: string
   auth: true
   endpoints:
     list:

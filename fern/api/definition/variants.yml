@@ -1,9 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
 
 service:
-  base-path: /api/v1/flags/{flagKey}/variants
+  base-path: /api/v1/namespaces/{namespaceKey}/flags/{flagKey}/variants
   auth: true
   path-parameters:
+    namespaceKey: string
     flagKey: string
   endpoints:
     create:
