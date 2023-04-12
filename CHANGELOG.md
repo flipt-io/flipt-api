@@ -6,6 +6,7 @@
 ### Bug Fixes
 
 * bump java generator to fix GET requests ([#62](https://github.com/flipt-io/flipt-api/issues/62)) ([632fe64](https://github.com/flipt-io/flipt-api/commit/632fe6476f522e5d486dc10e1a775ebea757a28a))
+* bump python generator ([#61](https://github.com/flipt-io/flipt-api/pull/61))
 
 ## [0.2.1](https://github.com/flipt-io/flipt-api/compare/0.2.0...0.2.1) (2023-04-12)
 
