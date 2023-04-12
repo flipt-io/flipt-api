@@ -19,7 +19,7 @@ groups:
         github:
           repository: flipt-io/flipt-java
       - name: fernapi/fern-python-sdk
-        version: 0.1.4
+        version: 0.2.1-rc0
         output:
           location: pypi
           package-name: flipt
