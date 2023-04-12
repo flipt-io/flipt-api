@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/flipt-io/flipt-api/compare/0.2.0...0.2.1) (2023-04-12)
+
+
+### Features
+
+* add namespaces paths ([#57](https://github.com/flipt-io/flipt-api/issues/57)) ([caf2023](https://github.com/flipt-io/flipt-api/commit/caf2023476229ddc50f022f3868afac3140dba95))
+
 ## [0.2.0](https://github.com/flipt-io/flipt-api/compare/0.1.9...0.2.0) (2023-04-12)
 
 
