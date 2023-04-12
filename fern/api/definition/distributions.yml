@@ -1,9 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
 
 service:
-  base-path: /api/v1/flags/{flagKey}/rules/{ruleId}/distributions
+  base-path: /api/v1/namespaces/{namespaceKey}/flags/{flagKey}/rules/{ruleId}/distributions
   auth: true
   path-parameters:
+    namespaceKey: string
     flagKey: string
 
     ruleId: string
@@ -11,12 +12,7 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: distributionCreateRequest
-        body:
-          properties:
-            variantId: string
-            rollout: double
+      request: distributionCreateRequest
       response: distribution
 
     delete:
@@ -34,12 +30,7 @@ service:
       method: PUT
       path-parameters:
         id: string
-      request:
-        name: distributionUpdateRequest
-        body:
-          properties:
-            variantId: string
-            rollout: double
+      request: distributionUpdateRequest
       response: distribution
 
 types:
@@ -51,3 +42,13 @@ types:
       rollout: double
       createdAt: datetime
       updatedAt: datetime
+
+  distributionCreateRequest:
+    properties:
+      variantId: string
+      rollout: double
+
+  distributionUpdateRequest:
+    properties:
+      variantId: string
+      rollout: double

@@ -4,8 +4,10 @@ imports:
   variants: variants.yml
 
 service:
-  base-path: /api/v1/flags
+  base-path: /api/v1/namespaces/{namespaceKey}/flags
   auth: true
+  path-parameters:
+    namespaceKey: string
   endpoints:
     list:
       path: ""
@@ -21,14 +23,7 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: flagCreateRequest
-        body:
-          properties:
-            key: string
-            name: string
-            description: optional<string>
-            enabled: optional<boolean>
+      request: flagCreateRequest
       response: flag
 
     get:
@@ -49,13 +44,7 @@ service:
       method: PUT
       path-parameters:
         key: string
-      request:
-        name: flagUpdateRequest
-        body:
-          properties:
-            name: string
-            description: optional<string>
-            enabled: optional<boolean>
+      request: flagUpdateRequest
       response: flag
 
 types:
@@ -74,3 +63,16 @@ types:
       createdAt: datetime
       updatedAt: datetime
       variants: list<variants.variant>
+
+  flagCreateRequest:
+    properties:
+      key: string
+      name: string
+      description: optional<string>
+      enabled: optional<boolean>
+
+  flagUpdateRequest:
+    properties:
+      name: string
+      description: optional<string>
+      enabled: optional<boolean>

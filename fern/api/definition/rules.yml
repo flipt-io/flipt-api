@@ -4,9 +4,10 @@ imports:
   distributions: distributions.yml
 
 service:
-  base-path: /api/v1/flags/{flagKey}/rules
+  base-path: /api/v1/namespaces/{namespaceKey}/flags/{flagKey}/rules
   auth: true
   path-parameters:
+    namespaceKey: string
     flagKey: string
   endpoints:
     list:
@@ -23,22 +24,13 @@ service:
     create:
       path: ""
       method: POST
-      request:
-        name: ruleCreateRequest
-        body:
-          properties:
-            segmentKey: string
-            rank: integer
+      request: ruleCreateRequest
       response: rule
 
     order:
       path: /order
       method: PUT
-      request:
-        name: ruleOrder
-        body:
-          properties:
-            ruleIds: list<string>
+      request: ruleOrderRequest
 
     get:
       path: /{id}
@@ -58,11 +50,7 @@ service:
       method: PUT
       path-parameters:
         id: string
-      request:
-        name: ruleUpdateRequest
-        body:
-          properties:
-            segmentKey: string
+      request: ruleUpdateRequest
 
 types:
   ruleList:
@@ -80,3 +68,16 @@ types:
       rank: integer
       createdAt: datetime
       updatedAt: datetime
+
+  ruleCreateRequest:
+    properties:
+      segmentKey: string
+      rank: integer
+
+  ruleOrderRequest:
+    properties:
+      ruleIds: list<string>
+
+  ruleUpdateRequest:
+    properties:
+      segmentKey: string
