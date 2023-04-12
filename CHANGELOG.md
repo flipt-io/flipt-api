@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.2.0](https://github.com/flipt-io/flipt-api/compare/0.1.9...0.2.0) (2023-04-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **api:** drop all non-namespaced routes
+
+### Features
+
+* **api:** add namespaced constraints endpoints ([b795cc8](https://github.com/flipt-io/flipt-api/commit/b795cc8314491121528049eb2effaedf7df0aa4b))
+* **api:** add namespaced distributions endpoints ([21ce384](https://github.com/flipt-io/flipt-api/commit/21ce38494dd6347958058b759a2a0e5f80bcabca))
+* **api:** add namespaced evaluation endpoints ([2936ca7](https://github.com/flipt-io/flipt-api/commit/2936ca7bbaf790b5f20dd84fcb0411f0ccd7847c))
+* **api:** add namespaced flags endpoints ([3ccb01f](https://github.com/flipt-io/flipt-api/commit/3ccb01f456ec58cad55e64811539854361166964))
+* **api:** add namespaced rules endpoints ([7972613](https://github.com/flipt-io/flipt-api/commit/7972613149e00d0eaab6fe85addac09d4b6f4fee))
+* **api:** add namespaced segments endpoints ([31ed4d2](https://github.com/flipt-io/flipt-api/commit/31ed4d2f156d6435306275a6d5691b86e5b3245e))
+* **api:** add namespaced variants endpoints ([2e012cd](https://github.com/flipt-io/flipt-api/commit/2e012cd8fb6301db86a6a5165d14e0306d24872f))
+
+
+### Bug Fixes
+
+* **api:** rename request types to be prefixed with namespaced ([8bc5aff](https://github.com/flipt-io/flipt-api/commit/8bc5affea15509d2c99a1d14f863976d22853ea8))
+
+
+### Code Refactoring
+
+* **api:** drop all non-namespaced routes ([0be94de](https://github.com/flipt-io/flipt-api/commit/0be94de17b4192fc96dea92b922c486ed8c615bc))
+
 ## [0.1.9](https://github.com/flipt-io/flipt-api/compare/0.1.8...0.1.9) (2023-02-22)
 
 
