@@ -1,11 +1,26 @@
 groups:
-  external:
+  draft:
+    generators:
+      - name: fernapi/fern-typescript-sdk
+        version: 0.1.7
+        github:
+          repository: flipt-io/flipt-node-draft
+      - name: fernapi/fern-java-sdk
+        version: 0.2.0
+        github:
+          repository: flipt-io/flipt-java-draft
+      - name: fernapi/fern-python-sdk
+        version: 0.1.4
+        github:
+          repository: flipt-io/flipt-python-draft
+
+  release:
     generators:
       - name: fernapi/fern-typescript-sdk
         version: 0.1.7
         output:
           location: npm
-          package-name: '@flipt-io/flipt'
+          package-name: "@flipt-io/flipt"
           token: ${FERN_NPM_TOKEN}
         github:
           repository: flipt-io/flipt-node
