@@ -5,6 +5,7 @@ service:
   auth: true
   path-parameters:
     namespaceKey: string
+
     segmentKey: string
   endpoints:
     create:
