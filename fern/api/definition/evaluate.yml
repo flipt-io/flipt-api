@@ -57,5 +57,5 @@ types:
   batchEvaluationResponse:
     properties:
       requestId: string
-      response: list<evaluationResponse>
+      responses: list<evaluationResponse>
       requestDurationMillis: double
