@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/flipt-io/flipt-api/compare/0.2.2...0.2.3) (2023-04-27)
+
+
+### Bug Fixes
+
+* **api:** use correct field responses in batch evaluation response ([0e6af6e](https://github.com/flipt-io/flipt-api/commit/0e6af6ee9378cf098daffea5afc7709204c2b75d))
+
 ## [0.2.2](https://github.com/flipt-io/flipt-api/compare/0.2.1...0.2.2) (2023-04-12)
 
 
