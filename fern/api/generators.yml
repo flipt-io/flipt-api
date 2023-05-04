@@ -28,7 +28,7 @@ groups:
   external:
     generators:
       - name: fernapi/fern-typescript-sdk
-        version: 0.1.7
+        version: 0.5.18
         output:
           location: npm
           package-name: '@flipt-io/flipt'
