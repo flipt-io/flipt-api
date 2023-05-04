@@ -8,7 +8,7 @@ groups:
           path: /tmp/fern/flipt-node
 
       - name: fernapi/fern-java-sdk
-        version: 0.2.0
+        version: 0.2.1
         output:
           location: local-file-system
           path: /tmp/fern/flipt-java
@@ -37,7 +37,7 @@ groups:
           repository: flipt-io/flipt-node
 
       - name: fernapi/fern-java-sdk
-        version: 0.2.1-rc0
+        version: 0.2.1
         output:
           location: maven
           coordinate: io.flipt:flipt-java
