@@ -2,7 +2,7 @@ groups:
   development:
     generators:
       - name: fernapi/fern-typescript-sdk
-        version: 0.1.7
+        version: 0.5.18
         output:
           location: local-file-system
           path: /tmp/fern/flipt-node
