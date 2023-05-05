@@ -2,7 +2,7 @@ groups:
   development:
     generators:
       - name: fernapi/fern-typescript-sdk
-        version: 0.1.7
+        version: 0.2.2
         output:
           location: local-file-system
           path: /tmp/fern/flipt-node
@@ -28,10 +28,10 @@ groups:
   external:
     generators:
       - name: fernapi/fern-typescript-sdk
-        version: 0.1.7
+        version: 0.2.2
         output:
           location: npm
-          package-name: '@flipt-io/flipt'
+          package-name: "@flipt-io/flipt"
           token: ${FERN_NPM_TOKEN}
         github:
           repository: flipt-io/flipt-node
