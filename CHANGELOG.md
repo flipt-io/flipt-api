@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/flipt-io/flipt-api/compare/0.2.3...0.2.4) (2023-05-05)
+
+
+### Bug Fixes
+
+* bump typescript generator to fix trailing slash issue ([#70](https://github.com/flipt-io/flipt-api/issues/70)) ([d9b053d](https://github.com/flipt-io/flipt-api/commit/d9b053d1eaf49b5acbb483012c28cfd379aea399))
+
 ## [0.2.3](https://github.com/flipt-io/flipt-api/compare/0.2.2...0.2.3) (2023-04-27)
 
 
