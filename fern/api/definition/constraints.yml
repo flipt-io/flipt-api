@@ -54,6 +54,7 @@ types:
       property: string
       operator: string
       value: optional<string>
+      description: string
 
   constraintUpdateRequest:
     properties:
@@ -61,3 +62,4 @@ types:
       property: string
       operator: string
       value: optional<string>
+      description: string
