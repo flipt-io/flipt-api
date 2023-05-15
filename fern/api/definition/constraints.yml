@@ -44,7 +44,7 @@ types:
       property: string
       operator: string
       value: string
-      description: string
+      description: optional<string>
       createdAt: datetime
       updatedAt: datetime
 
@@ -54,7 +54,7 @@ types:
       property: string
       operator: string
       value: optional<string>
-      description: string
+      description: optional<string>
 
   constraintUpdateRequest:
     properties:
@@ -62,4 +62,4 @@ types:
       property: string
       operator: string
       value: optional<string>
-      description: string
+      description: optional<string>
