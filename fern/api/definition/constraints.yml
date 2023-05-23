@@ -35,6 +35,7 @@ types:
       - STRING_COMPARISON_TYPE
       - NUMBER_COMPARISON_TYPE
       - BOOLEAN_COMPARISON_TYPE
+      - DATETIME_COMPARISON_TYPE
 
   constraint:
     properties:
