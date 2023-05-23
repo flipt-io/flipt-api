@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.5](https://github.com/flipt-io/flipt-api/compare/0.2.4...0.2.5) (2023-05-23)
+
+
+### Features
+
+* add constraint datetime comparison type ([#74](https://github.com/flipt-io/flipt-api/issues/74)) ([0910059](https://github.com/flipt-io/flipt-api/commit/0910059e7aedeec9faf2e9f0bbcec0223c0d7443))
+* add description to constraint as a parameter ([#72](https://github.com/flipt-io/flipt-api/issues/72)) ([fc008f3](https://github.com/flipt-io/flipt-api/commit/fc008f30a3bc38becf936bef97dc1695a330e364))
+
 ## [0.2.4](https://github.com/flipt-io/flipt-api/compare/0.2.3...0.2.4) (2023-05-05)
 
 
