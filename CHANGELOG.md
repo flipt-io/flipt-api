@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.6](https://github.com/flipt-io/flipt-api/compare/0.2.5...0.2.6) (2023-06-22)
+
+
+### Miscellaneous Chores
+
+* release 0.2.6 ([fa1660f](https://github.com/flipt-io/flipt-api/commit/fa1660f787554f4eab0e9dbc1f155fc35ff2f9ce))
+
 ## [0.2.5](https://github.com/flipt-io/flipt-api/compare/0.2.4...0.2.5) (2023-05-23)
 
 
