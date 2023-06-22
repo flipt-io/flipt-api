@@ -14,7 +14,7 @@ groups:
           path: /tmp/fern/flipt-java
 
       - name: fernapi/fern-python-sdk
-        version: 0.1.4
+        version: 0.3.7
         output:
           location: local-file-system
           path: /tmp/fern/flipt-python
@@ -47,7 +47,7 @@ groups:
           repository: flipt-io/flipt-java
 
       - name: fernapi/fern-python-sdk
-        version: 0.2.1-rc0
+        version: 0.3.7
         output:
           location: pypi
           package-name: flipt
