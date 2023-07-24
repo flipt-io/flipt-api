@@ -63,6 +63,12 @@ types:
       createdAt: datetime
       updatedAt: datetime
       variants: list<variants.variant>
+      type: flagType
+
+  flagType:
+    enum:
+      - VARIANT_FLAG_TYPE
+      - BOOLEAN_FLAG_TYPE
 
   flagCreateRequest:
     properties:
@@ -70,6 +76,7 @@ types:
       name: string
       description: optional<string>
       enabled: optional<boolean>
+      type: flagType
 
   flagUpdateRequest:
     properties:

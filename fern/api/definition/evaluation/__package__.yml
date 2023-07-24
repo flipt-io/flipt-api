@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+service:
+  base-path: /evaluate/v1
+  auth: true
+  endpoints:
+    boolean:
+      path: /boolean
+      method: POST
+      request: evaluationRequest
+      response: booleanEvaluationResponse
+
+    variant:
+      path: /variant
+      method: POST
+      request: evaluationRequest
+      response: variantEvaluationResponse
+
+types:
+  evaluationRequest:
+    properties:
+      requestId: optional<string>
+      namespaceKey: string
+      flagKey: string
+      entityId: string
+      context: map<string,string>
+
+  booleanEvaluationResponse:
+    properties:
+      requestId: string
+      enabled: boolean
+      timestamp: datetime
+      requestDurationMillis: double
+      reason: evaluationReason
+
+  variantEvaluationResponse:
+    properties:
+      requestId: string
+      match: boolean
+      segmentKey: string
+      variantKey: string
+      variantAttachment: string
+      timestamp: datetime
+      requestDurationMillis: double
+      reason: evaluationReason
+
+  evaluationReason:
+    enum:
+      - UNKNOWN_EVALUATION_REASON
+      - FLAG_DISABLED_EVALUATION_REASON
+      - MATCH_EVALUATION_REASON
+      - DEFAULT_EVALUATION_REASON
