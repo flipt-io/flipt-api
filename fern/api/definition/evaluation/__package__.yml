@@ -16,6 +16,12 @@ service:
       request: evaluationRequest
       response: variantEvaluationResponse
 
+    batch:
+      path: /batch
+      method: POST
+      request: batchEvaluationRequest
+      response: batchEvaluationResponse
+
 types:
   evaluationRequest:
     properties:
@@ -24,6 +30,25 @@ types:
       flagKey: string
       entityId: string
       context: map<string,string>
+
+  evaluationResponseType:
+    enum:
+      - VARIANT_EVALUATION_RESPONSE_TYPE
+      - BOOLEAN_EVALUATION_RESPONSE_TYPE
+      - ERROR_EVALUATION_RESPONSE_TYPE
+
+  evaluationResponse:
+    properties:
+      type: evaluationResponseType
+      boolean_response: optional<booleanEvaluationResponse>
+      variant_response: optional<variantEvaluationResponse>
+      error_response: optional<errorEvaluationResponse>
+
+  errorEvaluationResponse:
+    properties:
+      flagKey: string
+      namespaceKey: string
+      reason: errorEvaluationReason
 
   booleanEvaluationResponse:
     properties:
@@ -50,3 +75,19 @@ types:
       - FLAG_DISABLED_EVALUATION_REASON
       - MATCH_EVALUATION_REASON
       - DEFAULT_EVALUATION_REASON
+
+  errorEvaluationReason:
+    enum:
+      - UNKNOWN_ERROR_EVALUATION_REASON
+      - NOT_FOUND_ERROR_EVALUATION_REASON
+
+  batchEvaluationRequest:
+    properties:
+      requestId: optional<string>
+      requests: list<evaluationRequest>
+
+  batchEvaluationResponse:
+    properties:
+      requestId: string
+      responses: list<evaluationResponse>
+      requestDurationMillis: double
