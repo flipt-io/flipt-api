@@ -7,12 +7,14 @@ service:
     namespaceKey: string
   endpoints:
     evaluate:
+      availability: deprecated
       path: /evaluate
       method: POST
       request: evaluationRequest
       response: evaluationResponse
 
     batchEvaluate:
+      availability: deprecated
       path: /batch-evaluate
       method: POST
       request: batchEvaluationRequest
