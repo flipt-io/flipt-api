@@ -62,7 +62,7 @@ types:
     properties:
       requestId: string
       match: boolean
-      segmentKey: string
+      segmentKeys: list<string>
       variantKey: string
       variantAttachment: string
       timestamp: datetime
