@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.7](https://github.com/flipt-io/flipt-api/compare/0.2.6...0.2.7) (2023-07-31)
+
+
+### Features
+
+* Eval v2 ([#78](https://github.com/flipt-io/flipt-api/issues/78)) ([1517067](https://github.com/flipt-io/flipt-api/commit/15170679311055ccf6b0edca761a2620915934f7))
+
 ## [0.2.6](https://github.com/flipt-io/flipt-api/compare/0.2.5...0.2.6) (2023-06-22)
 
 
