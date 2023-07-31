@@ -5,9 +5,7 @@ service:
   auth: true
   path-parameters:
     namespaceKey: string
-
     flagKey: string
-
     ruleId: string
   endpoints:
     create:

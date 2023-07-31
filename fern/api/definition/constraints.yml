@@ -5,7 +5,6 @@ service:
   auth: true
   path-parameters:
     namespaceKey: string
-
     segmentKey: string
   endpoints:
     create:
@@ -40,6 +39,7 @@ types:
   constraint:
     properties:
       id: string
+      namespaceKey: string
       segmentKey: string
       type: constraintComparisonType
       property: string

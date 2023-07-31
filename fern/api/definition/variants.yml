@@ -5,7 +5,6 @@ service:
   auth: true
   path-parameters:
     namespaceKey: string
-
     flagKey: string
   endpoints:
     create:
@@ -32,6 +31,7 @@ types:
   variant:
     properties:
       id: string
+      namespaceKey: string
       flagKey: string
       key: string
       name: string

@@ -1,0 +1,103 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+service:
+  base-path: /api/v1/namespaces/{namespaceKey}/flags/{flagKey}/rollouts
+  auth: true
+  path-parameters:
+    namespaceKey: string
+    flagKey: string
+  endpoints:
+    list:
+      path: ""
+      method: GET
+      response: rolloutList
+      request:
+        name: rolloutListRequest
+        query-parameters:
+          limit: optional<integer>
+          offset: optional<integer>
+          pageToken: optional<string>
+
+    create:
+      path: ""
+      method: POST
+      request: rolloutCreateRequest
+      response: rollout
+
+    order:
+      path: /order
+      method: PUT
+      request: rolloutOrderRequest
+
+    get:
+      path: /{id}
+      method: GET
+      path-parameters:
+        id: string
+      response: rollout
+
+    delete:
+      path: /{id}
+      method: DELETE
+      path-parameters:
+        id: string
+
+    update:
+      path: /{id}
+      method: PUT
+      path-parameters:
+        id: string
+      request: rolloutUpdateRequest
+
+types:
+  rolloutList:
+    properties:
+      rollouts: list<rollout>
+      nextPageToken: string
+      totalCount: integer
+
+  rollout:
+    properties:
+      id: string
+      namespaceKey: string
+      flagKey: string
+      type: rolloutType
+      rank: integer
+      description: string
+      createdAt: datetime
+      updatedAt: datetime
+      segment: optional<rolloutSegment>
+      threshold: optional<rolloutThreshold>
+
+  rolloutType:
+    enum:
+      - UNKNOWN_ROLLOUT_TYPE
+      - SEGMENT_ROLLOUT_TYPE
+      - THRESHOLD_ROLLOUT_TYPE
+
+  rolloutSegment:
+    properties:
+      segmentKey: string
+      value: boolean
+
+  rolloutThreshold:
+    properties:
+      percentage: double
+      value: boolean
+
+  rolloutCreateRequest:
+    properties:
+      rank: integer
+      description: optional<string>
+      segment: optional<rolloutSegment>
+      threshold: optional<rolloutThreshold>
+
+  rolloutUpdateRequest:
+    properties:
+      description: optional<string>
+      segment: optional<rolloutSegment>
+      threshold: optional<rolloutThreshold>
+
+  rolloutOrderRequest:
+    properties:
+      rolloutIds: list<string>

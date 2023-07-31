@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+service:
+  base-path: /evaluate/v1
+  auth: true
+  endpoints:
+    boolean:
+      path: /boolean
+      method: POST
+      request: evaluationRequest
+      response: booleanEvaluationResponse
+
+    variant:
+      path: /variant
+      method: POST
+      request: evaluationRequest
+      response: variantEvaluationResponse
+
+    batch:
+      path: /batch
+      method: POST
+      request: batchEvaluationRequest
+      response: batchEvaluationResponse
+
+types:
+  evaluationRequest:
+    properties:
+      requestId: optional<string>
+      namespaceKey: string
+      flagKey: string
+      entityId: string
+      context: map<string,string>
+
+  evaluationResponseType:
+    enum:
+      - VARIANT_EVALUATION_RESPONSE_TYPE
+      - BOOLEAN_EVALUATION_RESPONSE_TYPE
+      - ERROR_EVALUATION_RESPONSE_TYPE
+
+  evaluationResponse:
+    properties:
+      type: evaluationResponseType
+      boolean_response: optional<booleanEvaluationResponse>
+      variant_response: optional<variantEvaluationResponse>
+      error_response: optional<errorEvaluationResponse>
+
+  errorEvaluationResponse:
+    properties:
+      flagKey: string
+      namespaceKey: string
+      reason: errorEvaluationReason
+
+  booleanEvaluationResponse:
+    properties:
+      requestId: string
+      enabled: boolean
+      timestamp: datetime
+      requestDurationMillis: double
+      reason: evaluationReason
+
+  variantEvaluationResponse:
+    properties:
+      requestId: string
+      match: boolean
+      segmentKeys: list<string>
+      variantKey: string
+      variantAttachment: string
+      timestamp: datetime
+      requestDurationMillis: double
+      reason: evaluationReason
+
+  evaluationReason:
+    enum:
+      - UNKNOWN_EVALUATION_REASON
+      - FLAG_DISABLED_EVALUATION_REASON
+      - MATCH_EVALUATION_REASON
+      - DEFAULT_EVALUATION_REASON
+
+  errorEvaluationReason:
+    enum:
+      - UNKNOWN_ERROR_EVALUATION_REASON
+      - NOT_FOUND_ERROR_EVALUATION_REASON
+
+  batchEvaluationRequest:
+    properties:
+      requestId: optional<string>
+      requests: list<evaluationRequest>
+
+  batchEvaluationResponse:
+    properties:
+      requestId: string
+      responses: list<evaluationResponse>
+      requestDurationMillis: double
