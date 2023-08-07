@@ -35,6 +35,7 @@ groups:
           token: ${FERN_NPM_TOKEN}
         github:
           repository: flipt-io/flipt-node
+          mode: pull-request
 
       - name: fernapi/fern-java-sdk
         version: 0.2.1
