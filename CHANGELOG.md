@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.8](https://github.com/flipt-io/flipt-api/compare/0.2.7...0.2.8) (2023-08-13)
+
+
+### Features
+
+* update python generate; use pr mode ([#82](https://github.com/flipt-io/flipt-api/issues/82)) ([db6d031](https://github.com/flipt-io/flipt-api/commit/db6d031654ff3e2830382a5c5d3a295126fcffd0))
+
 ## [0.2.7](https://github.com/flipt-io/flipt-api/compare/0.2.6...0.2.7) (2023-07-31)
 
 
