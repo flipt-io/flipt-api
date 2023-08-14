@@ -41,6 +41,7 @@ types:
       requestDurationMillis: double
       attachment: string
       reason: evaluationReason
+      segmentKeys: optional<string>
 
   evaluationReason:
     enum:
