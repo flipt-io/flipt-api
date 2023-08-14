@@ -35,6 +35,7 @@ groups:
           token: ${FERN_NPM_TOKEN}
         github:
           repository: flipt-io/flipt-node
+          mode: pull-request
 
       - name: fernapi/fern-java-sdk
         version: 0.4.2-rc3
@@ -45,6 +46,7 @@ groups:
           password: ${FERN_MAVEN_TOKEN}
         github:
           repository: flipt-io/flipt-java
+          mode: pull-request
 
       - name: fernapi/fern-python-sdk
         version: 0.4.0-rc0
@@ -60,3 +62,4 @@ groups:
         version: 0.0.11-4-g1c29f6c
         github:
           repository: flipt-io/flipt-openapi
+          mode: pull-request
