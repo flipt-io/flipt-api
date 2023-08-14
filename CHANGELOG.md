@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.9](https://github.com/flipt-io/flipt-api/compare/0.2.8...0.2.9) (2023-08-14)
+
+
+### Bug Fixes
+
+* **java:** update generator to v0.4.2-rc3 ([4b52dfb](https://github.com/flipt-io/flipt-api/commit/4b52dfb617b1a7fa6cf435836095d35b04aa54b9))
+
 ## [0.2.8](https://github.com/flipt-io/flipt-api/compare/0.2.7...0.2.8) (2023-08-13)
 
 
