@@ -3,10 +3,11 @@ name: release
 on:
   release:
     types: [released]
+  workflow_dispatch:
 
 jobs:
   fern-release:
-    if: github.event_name == 'release' && contains(github.ref, 'refs/tags/')
+    if: contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
