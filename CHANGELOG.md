@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.10](https://github.com/flipt-io/flipt-api/compare/0.2.9...0.2.10) (2023-08-16)
+
+
+### Features
+
+* **segments:** add segent anding feature for rules/rollouts ([492765b](https://github.com/flipt-io/flipt-api/commit/492765b0c9ca29f0be5c50d434b70dae8c1fed85))
+
 ## [0.2.9](https://github.com/flipt-io/flipt-api/compare/0.2.8...0.2.9) (2023-08-14)
 
 
