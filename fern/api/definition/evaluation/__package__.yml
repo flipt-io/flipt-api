@@ -40,9 +40,9 @@ types:
   evaluationResponse:
     properties:
       type: evaluationResponseType
-      boolean_response: optional<booleanEvaluationResponse>
-      variant_response: optional<variantEvaluationResponse>
-      error_response: optional<errorEvaluationResponse>
+      booleanResponse: optional<booleanEvaluationResponse>
+      variantResponse: optional<variantEvaluationResponse>
+      errorResponse: optional<errorEvaluationResponse>
 
   errorEvaluationResponse:
     properties:
