@@ -4,10 +4,13 @@ on:
   release:
     types: [released]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Flipt release version tag to generate
+        required: true
 
 jobs:
   fern-release:
-    if: contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,7 +21,18 @@ jobs:
       - name: Download Fern
         run: npm install -g fern-api
 
-      - name: Release SDKs
+      - name: Release SDKs (Dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          FERN_PYPI_TOKEN: ${{ secrets.FERN_PYPI_TOKEN}}
+          FERN_NPM_TOKEN: ${{ secrets.FERN_NPM_TOKEN }}
+          FERN_MAVEN_USERNAME: ${{ secrets.FERN_MAVEN_USERNAME }}
+          FERN_MAVEN_TOKEN: ${{ secrets.FERN_MAVEN_TOKEN }}
+          FERN_TOKEN: ${{ secrets.FERN_TOKEN }}
+        run: fern generate --group external --version ${{ inputs.tag }} --log-level debug
+
+      - name: Release SDKs (Released)
+        if: github.event_name == 'release' && contains(github.ref, 'refs/tags/')
         env:
           FERN_PYPI_TOKEN: ${{ secrets.FERN_PYPI_TOKEN}}
           FERN_NPM_TOKEN: ${{ secrets.FERN_NPM_TOKEN }}
@@ -26,3 +40,4 @@ jobs:
           FERN_MAVEN_TOKEN: ${{ secrets.FERN_MAVEN_TOKEN }}
           FERN_TOKEN: ${{ secrets.FERN_TOKEN }}
         run: fern generate --group external --version ${{ github.ref_name }} --log-level debug
+
