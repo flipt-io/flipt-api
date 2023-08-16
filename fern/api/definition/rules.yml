@@ -59,12 +59,19 @@ types:
       nextPageToken: string
       totalCount: integer
 
+  ruleSegmentOperator:
+    enum:
+      - OR_SEGMENT_OPERATOR
+      - AND_SEGMENT_OPERATOR
+
   rule:
     properties:
       id: string
       namespaceKey: string
       flagKey: string
       segmentKey: string
+      segmentKeys: optional<list<string>>
+      segmentOperator: ruleSegmentOperator
       distributions: list<distributions.distribution>
       rank: integer
       createdAt: datetime
@@ -73,6 +80,8 @@ types:
   ruleCreateRequest:
     properties:
       segmentKey: string
+      segmentKeys: optional<list<string>>
+      segmentOperator: optional<ruleSegmentOperator>
       rank: integer
 
   ruleOrderRequest:
@@ -82,3 +91,5 @@ types:
   ruleUpdateRequest:
     properties:
       segmentKey: string
+      segmentKeys: optional<list<string>>
+      segmentOperator: optional<ruleSegmentOperator>
