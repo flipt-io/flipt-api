@@ -69,6 +69,11 @@ types:
       segment: optional<rolloutSegment>
       threshold: optional<rolloutThreshold>
 
+  rolloutSegmentOperator:
+    enum:
+      - OR_SEGMENT_OPERATOR
+      - AND_SEGMENT_OPERATOR
+
   rolloutType:
     enum:
       - UNKNOWN_ROLLOUT_TYPE
@@ -78,6 +83,8 @@ types:
   rolloutSegment:
     properties:
       segmentKey: string
+      segmentKeys: optional<list<string>>
+      segmentOperator: optional<rolloutSegmentOperator>
       value: boolean
 
   rolloutThreshold:
