@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.11](https://github.com/flipt-io/flipt-api/compare/0.2.10...0.2.11) (2023-09-09)
+
+
+### Features
+
+* add extra dependencies ([#92](https://github.com/flipt-io/flipt-api/issues/92)) ([c72ad5e](https://github.com/flipt-io/flipt-api/commit/c72ad5efacd2ff55e74961c8a87778b0553a13e9))
+
 ## [0.2.10](https://github.com/flipt-io/flipt-api/compare/0.2.9...0.2.10) (2023-08-16)
 
 
