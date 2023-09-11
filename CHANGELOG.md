@@ -5,8 +5,8 @@
 
 ### Features
 
-* add extra dependencies ([#92](https://github.com/flipt-io/flipt-api/issues/92)) ([c72ad5e](https://github.com/flipt-io/flipt-api/commit/c72ad5efacd2ff55e74961c8a87778b0553a13e9))
-* **wip:** support testcontainers for java ([#94](https://github.com/flipt-io/flipt-api/issues/94)) ([2cc6b1d](https://github.com/flipt-io/flipt-api/commit/2cc6b1ded7762c0386f0e8719accb3d3b2f5b0f1))
+* (node) add extra dependencies ([#92](https://github.com/flipt-io/flipt-api/issues/92)) ([c72ad5e](https://github.com/flipt-io/flipt-api/commit/c72ad5efacd2ff55e74961c8a87778b0553a13e9))
+* (java) support testcontainers ([#94](https://github.com/flipt-io/flipt-api/issues/94)) ([2cc6b1d](https://github.com/flipt-io/flipt-api/commit/2cc6b1ded7762c0386f0e8719accb3d3b2f5b0f1))
 
 ## [0.2.10](https://github.com/flipt-io/flipt-api/compare/0.2.9...0.2.10) (2023-08-16)
 
