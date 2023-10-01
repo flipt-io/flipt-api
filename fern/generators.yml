@@ -11,7 +11,7 @@ groups:
             "@datadog/browser-rum": "^4.48.1"
 
       - name: fernapi/fern-java-sdk
-        version: 0.5.4
+        version: 0.5.8-rc0
         output:
           location: local-file-system
           path: /tmp/fern/flipt-java
@@ -44,7 +44,7 @@ groups:
             "@datadog/browser-rum": "^4.48.1"
 
       - name: fernapi/fern-java-sdk
-        version: 0.5.4
+        version: 0.5.8-rc0
         output:
           location: maven
           coordinate: io.flipt:flipt-java
