@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.12](https://github.com/flipt-io/flipt-api/compare/0.2.11...0.2.12) (2023-10-03)
+
+
+### Bug Fixes
+
+* upgrade java generator for `custom-dependencies` ([#97](https://github.com/flipt-io/flipt-api/issues/97)) ([3de56a7](https://github.com/flipt-io/flipt-api/commit/3de56a7cf6851acf9fc60a45f352a940cedb3fe7))
+
+
+### Miscellaneous Chores
+
+* release 0.2.12 ([462ca1c](https://github.com/flipt-io/flipt-api/commit/462ca1c28c1437b4895e895e78f8499a43feb036))
+
 ## [0.2.11](https://github.com/flipt-io/flipt-api/compare/0.2.10...0.2.11) (2023-09-10)
 
 
