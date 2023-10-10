@@ -11,13 +11,13 @@ groups:
             "@datadog/browser-rum": "^4.48.1"
 
       - name: fernapi/fern-java-sdk
-        version: 0.5.8
+        version: 0.5.10
         output:
           location: local-file-system
           path: /tmp/fern/flipt-java
 
       - name: fernapi/fern-python-sdk
-        version: 0.4.4
+        version: 0.6.0
         output:
           location: local-file-system
           path: /tmp/fern/flipt-python
@@ -44,7 +44,7 @@ groups:
             "@datadog/browser-rum": "^4.48.1"
 
       - name: fernapi/fern-java-sdk
-        version: 0.5.8
+        version: 0.5.10
         output:
           location: maven
           coordinate: io.flipt:flipt-java
@@ -58,7 +58,7 @@ groups:
             - "testImplementation org.testcontainers:junit-jupiter:1.18.3"
 
       - name: fernapi/fern-python-sdk
-        version: 0.4.4
+        version: 0.6.0
         output:
           location: pypi
           package-name: flipt
