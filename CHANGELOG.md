@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.13](https://github.com/flipt-io/flipt-api/compare/0.2.12...0.2.13) (2023-10-10)
+
+
+### Features
+
+* bump fern generators for java and python ([#100](https://github.com/flipt-io/flipt-api/issues/100)) ([a4978c6](https://github.com/flipt-io/flipt-api/commit/a4978c6b6e974374e0fcf2ca34ae65b59a0b78fa))
+
 ## [0.2.12](https://github.com/flipt-io/flipt-api/compare/0.2.11...0.2.12) (2023-10-03)
 
 
