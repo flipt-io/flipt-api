@@ -53,6 +53,7 @@ types:
   booleanEvaluationResponse:
     properties:
       requestId: string
+      flagKey: string
       enabled: boolean
       timestamp: datetime
       requestDurationMillis: double
@@ -62,6 +63,7 @@ types:
     properties:
       requestId: string
       match: boolean
+      flagKey: string
       segmentKeys: list<string>
       variantKey: string
       variantAttachment: string
