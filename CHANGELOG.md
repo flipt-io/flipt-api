@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.14](https://github.com/flipt-io/flipt-api/compare/0.2.13...0.2.14) (2023-11-01)
+
+
+### Features
+
+* add flagKey to eval responses ([#102](https://github.com/flipt-io/flipt-api/issues/102)) ([936bd87](https://github.com/flipt-io/flipt-api/commit/936bd8743aabcdc784d620cc77f09cd2169697da))
+
 ## [0.2.13](https://github.com/flipt-io/flipt-api/compare/0.2.12...0.2.13) (2023-10-10)
 
 
