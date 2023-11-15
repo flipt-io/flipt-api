@@ -17,7 +17,7 @@ groups:
           path: /tmp/fern/flipt-java
 
       - name: fernapi/fern-python-sdk
-        version: 0.6.0
+        version: 0.6.5
         output:
           location: local-file-system
           path: /tmp/fern/flipt-python
@@ -58,7 +58,7 @@ groups:
             - "testImplementation org.testcontainers:junit-jupiter:1.18.3"
 
       - name: fernapi/fern-python-sdk
-        version: 0.6.0
+        version: 0.6.5
         output:
           location: pypi
           package-name: flipt
