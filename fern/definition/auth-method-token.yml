@@ -16,6 +16,6 @@ service:
           properties:
             name: string
             namespaceKey: optional<string>
-            description: optional<string>
+            description: string
             expiresAt: optional<datetime>
       response: auth.authenticationToken
