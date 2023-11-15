@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.16](https://github.com/flipt-io/flipt-api/compare/0.2.15...0.2.16) (2023-11-15)
+
+
+### Features
+
+* upgrade python generator ([25379cf](https://github.com/flipt-io/flipt-api/commit/25379cf07a52e32139934ddca62133d47146f769))
+
 ## [0.2.15](https://github.com/flipt-io/flipt-api/compare/0.2.14...0.2.15) (2023-11-15)
 
 
