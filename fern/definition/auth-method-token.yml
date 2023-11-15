@@ -15,6 +15,7 @@ service:
         body:
           properties:
             name: string
-            description: string
+            namespaceKey: optional<string>
+            description: optional<string>
             expiresAt: optional<datetime>
       response: auth.authenticationToken
