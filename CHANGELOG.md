@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.17](https://github.com/flipt-io/flipt-api/compare/0.2.16...0.2.17) (2023-12-19)
+
+
+### Bug Fixes
+
+* bump fern-typescript-node to rm axios vuln ([#107](https://github.com/flipt-io/flipt-api/issues/107)) ([d79ab0e](https://github.com/flipt-io/flipt-api/commit/d79ab0e38993ff0a8ff07fb2eed183b78340f5e3))
+
 ## [0.2.16](https://github.com/flipt-io/flipt-api/compare/0.2.15...0.2.16) (2023-11-15)
 
 
