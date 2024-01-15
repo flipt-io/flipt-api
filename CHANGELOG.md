@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.18](https://github.com/flipt-io/flipt-api/compare/0.2.17...0.2.18) (2024-01-15)
+
+
+### Features
+
+* add JWT method type to enum ([#110](https://github.com/flipt-io/flipt-api/issues/110)) ([9c0bea0](https://github.com/flipt-io/flipt-api/commit/9c0bea00bf1f3ced192b93eb522e565eebb9020b))
+* add reference to request types ([#109](https://github.com/flipt-io/flipt-api/issues/109)) ([b5ac20b](https://github.com/flipt-io/flipt-api/commit/b5ac20b0b12c5c9c45b248e6b58afdb692254b55))
+
 ## [0.2.17](https://github.com/flipt-io/flipt-api/compare/0.2.16...0.2.17) (2023-12-19)
 
 
