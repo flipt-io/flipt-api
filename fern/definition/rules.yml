@@ -21,6 +21,7 @@ service:
           limit: optional<integer>
           offset: optional<integer>
           pageToken: optional<string>
+          reference: optional<string>
 
     create:
       path: ""
@@ -38,6 +39,10 @@ service:
       method: GET
       path-parameters:
         id: string
+      request:
+        name: rulesGetRequest
+        query-parameters:
+          reference: optional<string>
       response: rule
 
     delete:
