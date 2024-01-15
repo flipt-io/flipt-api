@@ -19,6 +19,7 @@ service:
           limit: optional<integer>
           offset: optional<integer>
           pageToken: optional<string>
+          reference: optional<string>
 
     create:
       path: ""
@@ -31,6 +32,10 @@ service:
       method: GET
       path-parameters:
         key: string
+      request:
+        name: flagGetRequest
+        query-parameters:
+          reference: optional<string>
       response: flag
 
     delete:

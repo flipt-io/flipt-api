@@ -30,6 +30,7 @@ types:
       flagKey: string
       entityId: string
       context: map<string,string>
+      reference: optional<string>
 
   evaluationResponseType:
     enum:
@@ -87,6 +88,7 @@ types:
     properties:
       requestId: optional<string>
       requests: list<evaluationRequest>
+      reference: optional<string>
 
   batchEvaluationResponse:
     properties:
