@@ -44,6 +44,7 @@ types:
       - METHOD_TOKEN
       - METHOD_OIDC
       - METHOD_KUBERNETES
+      - METHOD_JWT
 
   authentication:
     properties:
